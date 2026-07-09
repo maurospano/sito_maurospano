@@ -1,0 +1,718 @@
+/* ==========================================
+   1. RESET E IMPOSTAZIONI GLOBALI
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@keyframes fadeInPagina {
+    from {
+        opacity: 0;
+        filter: blur(8px);
+    }
+    to {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+body {
+    min-height: 100vh;
+    /* SFONDO CHIARO: Toni caldi, avorio e pergamena */
+    background: 
+        linear-gradient(135deg, rgba(248, 246, 240, 0.95), rgba(242, 239, 233, 0.97), rgba(235, 232, 225, 0.98)),
+        url('../immagini/sfondo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    /* UNICO FONT PER TUTTO IL SITO: Neutro, elegante, non invasivo */
+    font-family: 'Montserrat', sans-serif;
+    color: #1a1a1a;
+    animation: fadeInPagina 1.2s ease-out forwards; 
+    text-align: justify;
+    text-justify: inter-character;
+}
+
+.contenuto-pagine {
+    max-width: 1100px;
+    margin: 140px auto 80px auto;
+    padding: 0 40px;
+}
+
+
+/* ==========================================
+   2. LANDING PAGE (index.html)
+   ========================================== */
+.body-landing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.landing-container {
+    text-align: center;
+    padding: 20px;
+    transform: translateY(-12vh); 
+}
+
+.titolo-artista {
+    /* Rimossa la font particolare. Sfruttiamo l'eleganza dello spazio */
+    font-weight: 300;
+    font-size: 3rem;
+    letter-spacing: 12px; /* Spaziatura ampia per dare respiro */
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.sottotitolo {
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 6px;
+    margin-bottom: 25px;
+    color: #4a4a4a;
+    text-transform: uppercase;
+}
+
+.bottone-entra {
+    display: inline-block;
+    padding: 14px 45px;
+    border: 1px solid rgba(26, 26, 26, 0.3); 
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    background: transparent;
+}
+
+.bottone-entra:hover {
+    background-color: #1a1a1a;
+    color: #f8f6f0; 
+    letter-spacing: 5px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* SELETTORE LINGUA */
+.scelta-lingua-nuda {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.scelta-lingua-nuda a {
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    font-weight: 400;
+    opacity: 0.4;
+    transition: all 0.4s ease;
+}
+
+.scelta-lingua-nuda a:hover {
+    opacity: 1;
+    text-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.scelta-lingua-nuda .separatore {
+    color: #1a1a1a;
+    opacity: 0.15;
+    font-weight: 200;
+    font-size: 1rem;
+}
+
+
+/* ==========================================
+   3. MENU DI NAVIGAZIONE GLOBALE
+   ========================================== */
+.menu-principale {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    background: rgba(248, 246, 240, 0.85);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03); 
+}
+
+.logo a {
+    font-weight: 400;
+    color: #1a1a1a;
+    text-decoration: none;
+    letter-spacing: 4px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.menu-principale ul {
+    display: flex;
+    list-style: none;
+}
+
+.menu-principale li {
+    margin-left: 30px;
+}
+
+.menu-principale a {
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.5;
+    transition: all 0.4s ease;
+}
+
+.menu-principale a:hover, 
+.menu-principale a.attivo {
+    opacity: 1;
+}
+
+
+/* ==========================================
+   4. NUOVA HOME (NEWS & FEATURED VIDEO)
+   ========================================== */
+.sezione-novita {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 100px;
+    text-align: left;
+}
+
+.novita-copertina {
+    flex: 0 0 400px;
+}
+
+.novita-copertina img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.novita-testo {
+    flex: 1;
+}
+
+.badge-novita {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #8c877d; 
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.novita-testo h2 {
+    font-size: 2.2rem;
+    font-weight: 300;
+    letter-spacing: 6px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.novita-testo p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    font-weight: 400;
+    opacity: 0.85;
+    margin-bottom: 35px;
+}
+
+.btn-scopri {
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 1px solid rgba(26, 26, 26, 0.2);
+    padding: 12px 30px;
+    transition: all 0.4s ease;
+}
+
+.btn-scopri:hover {
+    background: #1a1a1a;
+    color: #f8f6f0;
+}
+
+.sezione-video-home {
+    margin-top: 60px;
+}
+
+.sezione-video-home h3 {
+    font-weight: 300;
+    font-size: 1.6rem;
+    letter-spacing: 6px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 900px) {
+    .sezione-novita {
+        flex-direction: column;
+        text-align: center;
+    }
+    .novita-copertina {
+        width: 70%;
+        flex: 0 0 auto;
+    }
+}
+
+
+/* ==========================================
+   5. PAGINA BIO EDITORIALE
+   ========================================== */
+.bio-container-centrato {
+    max-width: 950px; 
+    margin: 20px auto 100px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 120px; 
+}
+
+.bio-blocco {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+    text-align: left;
+}
+
+.bio-blocco.invertito {
+    grid-template-columns: 1fr 1.2fr;
+}
+
+.bio-blocco.invertito .bio-testo-sez {
+    grid-column: 2;
+}
+
+.bio-blocco.invertito .bio-immagine-sez {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.bio-testo-sez h2 {
+    font-weight: 300;
+    font-size: 1.8rem;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.bio-testo-sez p {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    font-weight: 400;
+    opacity: 0.85;
+}
+
+.bio-immagine-sez img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 2px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+.scroll-reveal {
+    opacity: 1;
+    transform: none;
+}
+
+
+/* ==========================================
+   6. PAGINA WORKS (ALBUM)
+   ========================================== */
+.titolo-sezione-opere {
+    display: none;
+}
+
+.lista-album {
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+}
+
+.album-entry {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    text-align: left;
+    background: rgba(0, 0, 0, 0.015); 
+    padding: 30px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transition: all 0.5s ease;
+}
+
+.album-entry:hover {
+    background: rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.06);
+}
+
+.album-copertina {
+    flex: 0 0 300px;
+    height: 300px;
+}
+
+.album-copertina img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.album-entry:hover .album-copertina img {
+    transform: scale(1.02);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+}
+
+.album-info {
+    flex: 1;
+}
+
+.album-info h3 {
+    font-weight: 400;
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.album-anno {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+    color: #8c877d; 
+    font-weight: 600;
+}
+
+.album-desc {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    font-weight: 400;
+    opacity: 0.8;
+    margin-bottom: 35px;
+}
+
+.album-links {
+    display: flex;
+    gap: 15px; 
+    flex-wrap: wrap; 
+}
+
+.album-links a {
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 1px solid rgba(26, 26, 26, 0.2);
+    padding: 12px 25px;
+    transition: all 0.4s ease;
+    background: transparent;
+}
+
+.album-links a:hover {
+    background: #1DB954;
+    border-color: #1DB954;
+    color: #ffffff;
+    box-shadow: 0 5px 15px rgba(29, 185, 84, 0.2);
+}
+
+.album-links .btn-extra-link:hover {
+    background: #1a1a1a;
+    color: #f8f6f0;
+    border-color: #1a1a1a;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.album-links i {
+    margin-right: 8px;
+}
+
+@media (max-width: 850px) {
+    .contenuto-pagine {
+        margin-top: 100px;
+    }
+    .album-entry {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        padding: 20px;
+    }
+    .album-copertina {
+        flex: 0 0 250px;
+        width: 250px;
+        height: 250px;
+    }
+}
+
+
+/* ==========================================
+   7. PAGINA SPARTITI (SHOP)
+   ========================================== */
+.testata-spartiti {
+    margin-bottom: 60px;
+}
+
+.testata-spartiti h2 {
+    font-weight: 300;
+    font-size: 2.2rem;
+    letter-spacing: 6px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.griglia-spartiti {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 50px;
+    margin-top: 40px;
+}
+
+.spartito-card {
+    background: rgba(0, 0, 0, 0.015);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    padding: 20px;
+    border-radius: 4px;
+    transition: all 0.5s ease;
+    text-align: left;
+}
+
+.spartito-card:hover {
+    background: rgba(0, 0, 0, 0.03);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+}
+
+.spartito-anteprima {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.spartito-anteprima img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.6s ease;
+}
+
+.spartito-card:hover .spartito-anteprima img {
+    transform: scale(1.05);
+}
+
+.tag-prezzo {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #1a1a1a;
+    color: #f8f6f0;
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.spartito-info h3 {
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.spartito-info p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 25px;
+    height: 50px;
+    overflow: hidden;
+}
+
+.spartito-azioni {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-compra {
+    flex: 1;
+    text-align: center;
+    padding: 12px 5px;
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(26, 26, 26, 0.2);
+    color: #1a1a1a;
+}
+
+.btn-compra.digital {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.btn-compra.digital:hover {
+    background: #1a1a1a;
+    color: #f8f6f0;
+}
+
+.btn-compra.physical:hover {
+    border-color: #1a1a1a;
+    background: transparent;
+}
+
+.btn-compra i {
+    margin-right: 8px;
+}
+
+
+/* ==========================================
+   8. PAGINA CONTATTI & NEWSLETTER
+   ========================================== */
+.layout-contatti {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    text-align: left;
+    margin-top: 40px;
+}
+
+.info-dirette h2, .box-newsletter h3 {
+    font-weight: 300;
+    font-size: 2rem;
+    letter-spacing: 6px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.box-newsletter h3 {
+    font-size: 1.6rem;
+}
+
+.Sottotitolo-contatti, .box-newsletter p {
+    font-weight: 400;
+    opacity: 0.8;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    font-size: 0.95rem;
+}
+
+.canali-contatto {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.contatto-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.contatto-item i {
+    opacity: 0.5;
+    width: 20px;
+}
+
+.contatto-item a {
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.contatto-item a:hover {
+    opacity: 0.7;
+}
+
+.form-newsletter {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-email {
+    width: 100%;
+    padding: 14px;
+    background: rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    color: #1a1a1a;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: all 0.4s ease;
+}
+
+.input-email:focus {
+    outline: none;
+    background: rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.btn-iscriviti {
+    padding: 14px;
+    background: transparent;
+    border: 1px solid #1a1a1a;
+    color: #1a1a1a;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.btn-iscriviti:hover {
+    background: #1a1a1a;
+    color: #f8f6f0;
+    letter-spacing: 4px;
+}
+
+@media (max-width: 800px) {
+    .layout-contatti {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+}
