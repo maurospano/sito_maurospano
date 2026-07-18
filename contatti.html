@@ -47,7 +47,7 @@
 
         /* Dettagli Contatto (Email, Web) */
         .canali-contatto {
-            margin-bottom: 20px; /* Margine ridotto per fare spazio ai social */
+            margin-bottom: 20px;
         }
         .contatto-item {
             display: flex;
@@ -82,7 +82,7 @@
         }
         .social-links a:hover {
             opacity: 0.6;
-            transform: translateY(-3px); /* Effetto sollevamento al passaggio del mouse */
+            transform: translateY(-3px);
         }
 
         /* Linea separatrice */
@@ -131,6 +131,7 @@
             border-radius: 4px;
             transition: background 0.3s, transform 0.3s;
             width: 100%;
+            white-space: nowrap; /* Mantiene il testo su una riga sola */
         }
 
         .btn-invia:hover, .btn-iscriviti:hover {
@@ -138,7 +139,7 @@
             transform: translateY(-2px);
         }
 
-        /* Box Newsletter con sfondo leggero per distinguerlo */
+        /* Box Newsletter */
         .box-newsletter {
             background: rgba(0, 0, 0, 0.03);
             padding: 40px;
@@ -181,27 +182,17 @@
                 </div>
 
                 <div class="social-links">
-                    <!-- SOSTITUISCI IL SIMBOLO # CON I LINK VERI AI TUOI PROFILI -->
                     <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
                     <a href="#" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
                     <a href="#" target="_blank" title="Spotify"><i class="fab fa-spotify"></i></a>
                 </div>
 
-                <!-- Linea Sottile Divisoria -->
                 <hr class="linea-separatrice">
 
-                <!-- Modulo di Contatto Diretto (Usa FormSubmit) -->
-                <!-- SOSTITUISCI info@maurospano.com CON LA TUA VERA EMAIL -->
                 <form action="https://formsubmit.co/maurospano95@gmail.com" method="POST" class="form-messaggio">
-                    
-                    <!-- Honeypot per evitare lo spam dei bot -->
                     <input type="text" name="_honey" style="display:none">
-                    
-                    <!-- Disattiva il captcha brutto di default (opzionale) -->
                     <input type="hidden" name="_captcha" value="false">
-
-                    <!-- Pagina di "Successo" dopo l'invio (Creeremo poi una pagina grazie.html) -->
-                    <input type="hidden" name="_next" value="/grazie.html">
+                    <input type="hidden" name="_next" value="https://maurospano.github.io/grazie.html">
 
                     <input type="text" name="Nome" placeholder="Il tuo nome" required class="input-field">
                     <input type="email" name="Email" placeholder="La tua email" required class="input-field">
@@ -210,18 +201,15 @@
                     
                     <button type="submit" class="btn-invia">Invia Messaggio</button>
                 </form>
-
             </div>
 
             <div class="box-newsletter">
                 <h3>Newsletter</h3>
                 <p>Per ricevere in anteprima aggiornamenti sulle prossime uscite discografiche, concerti e la pubblicazione di nuovi spartiti.</p>
                 
-                <!-- IL LINK NELL'ACTION ANDRÀ SOSTITUITO CON QUELLO FORNITO DA MAILCHIMP/MAILERLITE -->
                 <form action="#" method="POST" class="form-newsletter">
                     <input type="email" name="EMAIL" placeholder="Il tuo indirizzo email" required class="input-field">
-                    <button type="submit" class="btn-iscriviti" >Iscriviti</button>
-                    
+                    <button type="submit" class="btn-iscriviti">Iscriviti</button>
                 </form>
             </div>
 
