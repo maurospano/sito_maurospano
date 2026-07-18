@@ -6,18 +6,54 @@
     <title>Mauro Spanò | Bio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Mantengo il collegamento al tuo CSS principale per il menu e il resto del sito -->
     <link rel="stylesheet" href="css/stile.css">
+    
+    <!-- Stili specifici solo per questa pagina Bio -->
+    <style>
+        /* 1. EROE (Immagine in alto) */
+        .hero-bio { position: relative; height: 60vh; display: flex; align-items: center; justify-content: center; margin-bottom: 80px; background: url('immagini/bio-hero.jpg') center center / cover no-repeat; }
+        .hero-bio::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); }
+        .hero-bio h1 { position: relative; z-index: 1; color: #f8f6f0; font-weight: 300; font-size: 3.5rem; letter-spacing: 10px; text-transform: uppercase; text-align: center; text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); }
+        @media (max-width: 850px) { .hero-bio h1 { font-size: 2.2rem; letter-spacing: 5px; padding: 0 20px; } }
+
+        /* 2. TESTO BIOGRAFIA */
+        .testo-bio { max-width: 850px; margin: 0 auto 60px auto; padding: 0 40px; }
+        .testo-bio p { font-size: 1.05rem; line-height: 1.9; font-weight: 400; opacity: 0.85; margin-bottom: 40px; }
+
+        /* 3. GALLERIA FOTOGRAFICA SCORREVOLE */
+        .bio-gallery-container { max-width: 1000px; margin: 0 auto 80px auto; padding: 0 20px; }
+        .bio-gallery-scroll { display: flex; gap: 20px; overflow-x: auto; padding-bottom: 20px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+        .bio-gallery-scroll::-webkit-scrollbar { display: none; } /* Nasconde barra su Chrome/Safari */
+        .bio-gallery-scroll img { flex: 0 0 85%; max-width: 600px; height: 450px; object-fit: cover; border-radius: 4px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); scroll-snap-align: center; filter: brightness(0.95); }
+        @media (max-width: 850px) { .bio-gallery-scroll img { flex: 0 0 90%; height: 300px; } }
+
+        /* 4. ACCORDION ESPANDIBILI */
+        .accordion-cv { max-width: 850px; margin: 0 auto 120px auto; padding: 0 40px; }
+        .accordion-cv details { border-bottom: 1px solid rgba(0, 0, 0, 0.1); padding: 20px 0; }
+        .accordion-cv summary { font-size: 1.4rem; font-weight: 300; letter-spacing: 4px; text-transform: uppercase; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; color: #1a1a1a; }
+        .accordion-cv summary::-webkit-details-marker { display: none; }
+        .accordion-cv summary::after { content: '+'; font-size: 1.8rem; font-weight: 200; transition: transform 0.3s ease; }
+        .accordion-cv details[open] summary::after { transform: rotate(45deg); }
+        .accordion-cv .details-content { padding: 25px 0 10px 0; font-size: 0.95rem; line-height: 1.8; opacity: 0.85; }
+
+        /* 5. ELENCHI (Indentazione appesa corretta) */
+        .lista-cv { list-style: none; padding: 0; margin: 0; }
+        .lista-cv li { position: relative; padding-left: 20px; margin-bottom: 12px; text-align: left; }
+        .lista-cv li::before { content: "•"; position: absolute; left: 0; top: 0; color: #1a1a1a; opacity: 0.5; }
+    </style>
 </head>
 <body>
 
+    <!-- Menu Principale -->
     <header class="menu-principale">
         <div class="logo"><a href="home.html">MAURO SPANÒ</a></div>
         <nav>
             <ul>
                 <li><a href="home.html">Home</a></li>
-                <li><a href="bio.html" class="attivo">Bio</a></li>  
+                <li><a href="bio.html" class="attivo">Bio</a></li>
                 <li><a href="works.html">Works</a></li>
                 <li><a href="spartiti.html">Shop</a></li>
                 <li><a href="contatti.html">Contatti</a></li>
@@ -25,38 +61,83 @@
         </nav>
     </header>
 
-<main class="contenuto-pagine">
-        <div class="bio-container-centrato">
+    <main>
+        <!-- 1) Grande foto con titolo in sovrimpressione -->
+        <section class="hero-bio">
+            <h1>Mauro Spanò - Biografia</h1>
+        </section>
+
+        <!-- 2) Testo della biografia compattato -->
+        <section class="testo-bio">
+            <p>Mauro Spanò è un pianista e compositore originario di Trapani (Sicilia), attualmente attivo in Trentino-Alto Adige. Fin da bambino mostra un profondo fascino per l’arte in ogni sua forma, sviluppando una spiccata propensione per la musica applicata alle immagini. Convinto che la musica legata alla dimensione visiva possieda un potere evocativo unico, capace di toccare le corde più profonde della coscienza, Spanò scrive traducendo la realtà – o la sua percezione di essa – in una personalissima narrazione per immagini.</p>
+            <p>Cresciuto in una famiglia di musicisti, respira la musica classica fin dall'infanzia, sebbene il suo percorso accademico abbia poi intrapreso una strada differente. Nel 2019 consegue con il massimo dei voti e la lode il Diploma Accademico di Secondo Livello in Pianoforte Jazz presso il Conservatorio di Vicenza. Il jazz rappresenta per lui un amore incondizionato a cui si dedica interamente: con il quintetto RAME e altre formazioni esplora questa musica in tutte le sue sfumature, dallo swing mainstream al jazz contemporaneo, fino all'improvvisazione radicale. Questo percorso di ricerca lo porta a esibirsi in prestigiosi contesti concertistici, sia in Italia che all'estero, e ad ottenere riconoscimenti in diversi concorsi nazionali e internazionali.</p>
+            <p>Il periodo della pandemia segna una svolta, spingendolo verso nuovi territori espressivi. Si avvicina alla musica elettronica e avvia collaborazioni con note personalità dell’intrattenimento online. In un percorso distante dalle sue abitudini, si ritrova a suonare musica pop in eventi legati al mondo del gaming, diventando persino una carta collezionabile per un set distribuito in tutta Italia. Esperienze surreali che non scalfiscono la sua urgenza compositiva, ma che scardinano una visione forse troppo autoreferenziale che a volte il mondo della ricerca pura porta con sé.</p>
+            <p>Se in passato tendeva a considerare la complessità come un valore assoluto, l'immersione in un contesto così speculare accende in lui una nuova sensibilità: l'attenzione verso l'esperienza dell'ascoltatore. Consapevole che l'opera non si esaurisce sul palco ma si compie nell'emozione di chi la riceve, Spanò trasforma la sua ricerca nella sfida di creare formule capaci di accorciare le distanze, offrendo una musica profonda ma aperta, capace di accogliere e dialogare con il pubblico.</p>
+            <p>Oggi, sebbene l'improvvisazione rimanga uno strumento espressivo per lui indispensabile, la scrittura è la dimensione che più lo completa. Guardare uno spartito finito gli restituisce la stessa soddisfazione di un pittore davanti alla sua tela ultimata; scorgere nuovi dettagli tra le sue pieghe compositive è come scoprire sfumature inedite in un film amato e visto mille volte. In questo senso, persino il limite della pagina scritta si trasforma in un perimetro di sicurezza, intimità e assoluta libertà creativa.</p>
+        </section>
+
+        <!-- 3) Nuova Galleria a scorrimento orizzontale -->
+        <section class="bio-gallery-container">
+            <div class="bio-gallery-scroll">
+                <img src="immagini/bio-1.jpg" alt="Mauro Spanò 1">
+                <img src="immagini/bio-2.jpg" alt="Mauro Spanò 2">
+                <img src="immagini/bio-3.jpg" alt="Mauro Spanò 3">
+                <img src="immagini/bio-4.jpg" alt="Mauro Spanò 4">
+                <img src="immagini/bio-5.jpg" alt="Mauro Spanò 5">
+                <!-- Se vuoi aggiungere una terza foto, scommenta la riga sotto -->
+                <!-- <img src="immagini/bio-3.jpg" alt="Ritratto Mauro Spanò"> -->
+            </div>
+        </section>
+
+        <!-- 4) Elenco Espandibile (Accordion) -->
+        <section class="accordion-cv">
+            <!-- Sezione Studi -->
+            <details>
+                <summary>Studi</summary>
+                <div class="details-content">
+                    <ul class="lista-cv">
+                        <li>Diploma Accademico di Secondo Livello in Discipline Musicali - Pianoforte Jazz (Conservatorio di Vicenza) &ndash; 110/110 con Lode</li>
+                        <li>Diploma Accademico di Primo Livello in Pianoforte Jazz (Conservatorio di Vicenza) &ndash; 110/110</li>
+                        <li>Corsi di studio e Masterclass di perfezionamento e ricerca con: Paolo Birro, Pietro Tonolo, Salvatore Maiore, Mauro Beggio, Michele Calgaro, Giampaolo Casati, Roberto Dani, Stefano Battaglia, Kevin Hays, Marco Tamburini.</li>
+                    </ul>
+                </div>
+            </details>
             
-            <div class="bio-blocco scroll-reveal">
-                <div class="bio-testo-sez">
-                    <h2>Le Origini</h2>
-                    <p>Benvenuto nel mio spazio visivo e sonoro. Sono Mauro Spanò, pianista e compositore. La mia musica esplora le sfumature dell'anima, 
-                        unendo la tradizione classica a sonorità moderne e suggestive. Benvenuto nel mio spazio visivo e sonoro. Sono Mauro Spanò, pianista e compositore. 
-                        La mia musica esplora le sfumature dell'anima, unendo la tradizione classica a sonorità moderne e suggestive. Benvenuto nel mio spazio visivo e sonoro. 
-                        Sono Mauro Spanò, pianista e compositore. La mia musica esplora le sfumature dell'anima, unendo la tradizione classica a sonorità moderne e suggestive. 
-                        Benvenuto nel mio spazio visivo e sonoro. Sono Mauro Spanò, pianista e compositore. La mia musica esplora le sfumature dell'anima, unendo la tradizione 
-                        classica a sonorità moderne e suggestive. Benvenuto nel mio spazio visivo e sonoro. Sono Mauro Spanò, pianista e compositore. La mia musica esplora le 
-                        sfumature dell'anima, unendo la tradizione classica a sonorità moderne e suggestive. Benvenuto nel mio spazio visivo e sonoro. Sono Mauro Spanò, pianista e 
-                        compositore. La mia musica esplora le sfumature dell'anima, unendo la tradizione classica a sonorità moderne e suggestive. Benvenuto nel mio spazio visivo e sonoro. 
-                        Sono Mauro Spanò, pianista e compositore. La mia musica esplora le sfumature dell'anima, unendo la tradizione classica a sonorità moderne e suggestive.</p>
+            <!-- Sezione Concorsi -->
+            <details>
+                <summary>Concorsi</summary>
+                <div class="details-content">
+                    <ul class="lista-cv">
+                        <li>Primo Premio Assoluto al Concorso Nazionale "Chicco Bettinardi" di Piacenza edizione 2019</li>
+                        <li>Primo Premio Assoluto al Concorso Internazionale "Giovani Musicisti" di Treviso</li>
+                        <li>Primo Premio Tomorrow's Jazz Award 2021 organizzato da Veneto Jazz, Teatro La Fenice</li>
+                        <li>Terzo Premio al Concorso Internazionale "JazzJuniors" di Cracovia (Polonia)</li>
+                        <li>Finalista al Concorso Internazionale "EuropaFest" di Bucarest (Romania)</li>
+                        <li>Finalista al Festival Nazionale dei Conservatori di Frosinone</li>
+                    </ul>
                 </div>
-                <div class="bio-immagine-sez">
-                    <img src="immagini/portrait_one.jpg" alt="Mauro Spanò - Le Origini">
-                </div>
-            </div>
+            </details>
 
-            <div class="bio-blocco invertito scroll-reveal">
-                <div class="bio-testo-sez">
-                    <h2>Il Cammino</h2>
-                    <p>In questo luogo potrai ascoltare le mie ultime uscite streaming, acquistare le partiture dei miei brani sia in formato digitale che cartaceo, e rimanere aggiornato sulle mie attività future.</p>
+            <!-- Sezione Concerti -->
+            <details>
+                <summary>Concerti</summary>
+                <div class="details-content">
+                    <p>Si è esibito dal vivo sia in piano solo che con diversi tipi di formazione in Italia e all'estero:</p><br>
+                    <ul class="lista-cv">
+                        <li>Teatro Olimpico - Vicenza</li>
+                        <li>Teatro La Fenice (Sale Apollinee) - Venezia</li>
+                        <li>Nis Jazz Festival - Serbia</li>
+                        <li>Bucharest Jazz Festival - Romania</li>
+                        <li>ICE Kraków Congress Centre - Polonia</li>
+                        <li>Casa Del Jazz - Roma</li>
+                        <li>Teatro Comunale - Vicenza</li>
+                        <li>Teatro Comunale - Ferrara</li>
+                        <li>Palazzina Marfisa D'Este - Ferrara</li>
+                    </ul>
                 </div>
-                <div class="bio-immagine-sez">
-                    <img src="immagini/sentiero.png" alt="Mauro Spanò - Il Processo">
-                </div>
-            </div>
+            </details>
+        </section>
 
-        </div>
     </main>
 
 </body>

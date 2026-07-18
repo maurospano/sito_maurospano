@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mauro Spanò | Biography</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/stile.css">
+    
+    <style>
+        /* 1. HERO */
+        .hero-bio { position: relative; height: 60vh; display: flex; align-items: center; justify-content: center; margin-bottom: 80px; background: url('immagini/bio-hero.jpg') center center / cover no-repeat; }
+        .hero-bio::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); }
+        .hero-bio h1 { position: relative; z-index: 1; color: #f8f6f0; font-weight: 300; font-size: 3.5rem; letter-spacing: 10px; text-transform: uppercase; text-align: center; text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); }
+        @media (max-width: 850px) { .hero-bio h1 { font-size: 2.2rem; letter-spacing: 5px; padding: 0 20px; } }
+
+        /* 2. BIO TEXT */
+        .testo-bio { max-width: 850px; margin: 0 auto 60px auto; padding: 0 40px; }
+        .testo-bio p { font-size: 1.05rem; line-height: 1.9; font-weight: 400; opacity: 0.85; margin-bottom: 40px; }
+
+        /* 3. SCROLLING GALLERY */
+        .bio-gallery-container { max-width: 1000px; margin: 0 auto 80px auto; padding: 0 20px; }
+        .bio-gallery-scroll { display: flex; gap: 20px; overflow-x: auto; padding-bottom: 20px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+        .bio-gallery-scroll::-webkit-scrollbar { display: none; }
+        .bio-gallery-scroll img { flex: 0 0 85%; max-width: 600px; height: 450px; object-fit: cover; border-radius: 4px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); scroll-snap-align: center; filter: brightness(0.95); }
+        @media (max-width: 850px) { .bio-gallery-scroll img { flex: 0 0 90%; height: 300px; } }
+
+        /* 4. EXPANDABLE ACCORDIONS */
+        .accordion-cv { max-width: 850px; margin: 0 auto 120px auto; padding: 0 40px; }
+        .accordion-cv details { border-bottom: 1px solid rgba(0, 0, 0, 0.1); padding: 20px 0; }
+        .accordion-cv summary { font-size: 1.4rem; font-weight: 300; letter-spacing: 4px; text-transform: uppercase; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; color: #1a1a1a; }
+        .accordion-cv summary::-webkit-details-marker { display: none; }
+        .accordion-cv summary::after { content: '+'; font-size: 1.8rem; font-weight: 200; transition: transform 0.3s ease; }
+        .accordion-cv details[open] summary::after { transform: rotate(45deg); }
+        .accordion-cv .details-content { padding: 25px 0 10px 0; font-size: 0.95rem; line-height: 1.8; opacity: 0.85; }
+
+        /* 5. LIST STYLES (Hanging indent) */
+        .lista-cv { list-style: none; padding: 0; margin: 0; }
+        .lista-cv li { position: relative; padding-left: 20px; margin-bottom: 12px; text-align: left; }
+        .lista-cv li::before { content: "•"; position: absolute; left: 0; top: 0; color: #1a1a1a; opacity: 0.5; }
+    </style>
+</head>
+<body>
+
+    <!-- Menu Principale (English Version Links) -->
+    <header class="menu-principale">
+        <div class="logo"><a href="home-en.html">MAURO SPANÒ</a></div>
+        <nav>
+            <ul>
+                <li><a href="home-en.html">Home</a></li>
+                <li><a href="bio-en.html" class="attivo">Bio</a></li>
+                <li><a href="works-en.html">Works</a></li>
+                <li><a href="shop-en.html">Shop</a></li>
+                <li><a href="contact-en.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 1) Hero Section -->
+        <section class="hero-bio">
+            <h1>Mauro Spanò - Biography</h1>
+        </section>
+
+        <!-- 2) Biography Text -->
+        <section class="testo-bio">
+            <p>Mauro Spanò is a pianist and composer originally from Trapani (Sicily), currently active in Trentino-Alto Adige. Since childhood, he has shown a deep fascination for art in all its forms, developing a strong inclination for music applied to images. Convinced that music linked to the visual dimension possesses a unique evocative power, capable of touching the deepest chords of consciousness, Spanò writes by translating reality &ndash; or his perception of it &ndash; into a highly personal narrative through images.</p>
+            <p>Raised in a family of musicians, he breathed classical music from an early age, although his academic path later took a different direction. In 2019, he graduated with top marks and honors with a Master's Degree in Jazz Piano from the Conservatory of Vicenza. Jazz represents an unconditional love to which he completely dedicates himself: with the RAME quintet and other ensembles, he explores this music in all its nuances, from mainstream swing to contemporary jazz, up to radical improvisation. This research path led him to perform in prestigious concert settings, both in Italy and abroad, and to win awards in various national and international competitions.</p>
+            <p>The pandemic period marked a turning point, pushing him towards new expressive territories. He approached electronic music and started collaborations with well-known personalities in online entertainment. In a path far from his habits, he found himself playing pop music at events related to the gaming world, even becoming a collectible card for a set distributed throughout Italy. These surreal experiences did not undermine his compositional urgency, but rather dismantled a perhaps overly self-referential vision that the world of pure research sometimes brings with it.</p>
+            <p>While in the past he tended to consider complexity as an absolute value, immersion in such a specular context ignited a new sensitivity in him: attention to the listener's experience. Aware that the artwork does not end on stage but is fulfilled in the emotion of the receiver, Spanò transforms his research into the challenge of creating formulas capable of shortening distances, offering music that is profound yet accessible, capable of welcoming and dialoguing with the audience.</p>
+            <p>Today, although improvisation remains an indispensable expressive tool for him, writing is the dimension that completes him the most. Looking at a finished score gives him the same satisfaction as a painter in front of his completed canvas; glimpsing new details within his compositional folds is like discovering unprecedented nuances in a beloved movie watched a thousand times. In this sense, even the limit of the written page turns into a perimeter of safety, intimacy, and absolute creative freedom.</p>
+        </section>
+
+        <!-- 3) Horizontal Scrolling Gallery -->
+        <section class="bio-gallery-container">
+            <div class="bio-gallery-scroll">
+                <img src="immagini/bio-1.jpg" alt="Mauro Spanò playing piano">
+                <img src="immagini/bio-2.jpg" alt="Mauro Spanò live performance">
+                <!-- <img src="immagini/bio-3.jpg" alt="Mauro Spanò portrait"> -->
+            </div>
+        </section>
+
+        <!-- 4) Expandable Accordion (CV) -->
+        <section class="accordion-cv">
+            <!-- Studies Section -->
+            <details>
+                <summary>Education</summary>
+                <div class="details-content">
+                    <ul class="lista-cv">
+                        <li>Master's Degree in Musical Disciplines - Jazz Piano (Conservatory of Vicenza) &ndash; 110/110 cum Laude</li>
+                        <li>Bachelor's Degree in Jazz Piano (Conservatory of Vicenza) &ndash; 110/110</li>
+                        <li>Study courses and advanced Masterclasses with: Paolo Birro, Pietro Tonolo, Salvatore Maiore, Mauro Beggio, Michele Calgaro, Giampaolo Casati, Roberto Dani, Stefano Battaglia, Kevin Hays, Marco Tamburini.</li>
+                    </ul>
+                </div>
+            </details>
+            
+            <!-- Competitions Section -->
+            <details>
+                <summary>Awards</summary>
+                <div class="details-content">
+                    <ul class="lista-cv">
+                        <li>First Absolute Prize at the National Competition "Chicco Bettinardi" in Piacenza, 2019 edition</li>
+                        <li>First Absolute Prize at the International Competition "Giovani Musicisti" in Treviso</li>
+                        <li>First Prize at the Tomorrow's Jazz Award 2021 organized by Veneto Jazz, Teatro La Fenice</li>
+                        <li>Third Prize at the "JazzJuniors" International Competition in Krakow (Poland)</li>
+                        <li>Finalist at the "EuropaFest" International Competition in Bucharest (Romania)</li>
+                        <li>Finalist at the National Festival of Conservatories in Frosinone</li>
+                    </ul>
+                </div>
+            </details>
+
+            <!-- Concerts Section -->
+            <details>
+                <summary>Concerts</summary>
+                <div class="details-content">
+                    <p style="margin-bottom: 20px;">He has performed live both as a solo pianist and with various ensembles in Italy and abroad:</p>
+                    <ul class="lista-cv">
+                        <li>Teatro Olimpico - Vicenza</li>
+                        <li>Teatro La Fenice (Sale Apollinee) - Venice</li>
+                        <li>Nis Jazz Festival - Serbia</li>
+                        <li>Bucharest Jazz Festival - Romania</li>
+                        <li>ICE Kraków Congress Centre - Poland</li>
+                        <li>Casa Del Jazz - Rome</li>
+                        <li>Teatro Comunale - Vicenza</li>
+                        <li>Teatro Comunale - Ferrara</li>
+                        <li>Palazzina Marfisa D'Este - Ferrara</li>
+                    </ul>
+                </div>
+            </details>
+        </section>
+
+    </main>
+
+</body>
+</html>

@@ -6,9 +6,146 @@
     <title>Mauro Spanò | Contatti</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/stile.css">
+    
+    <style>
+        /* Stili specifici per la pagina Contatti */
+        .layout-contatti {
+            max-width: 1000px;
+            margin: 60px auto 100px auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        @media (max-width: 850px) {
+            .layout-contatti {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                padding: 0 20px;
+            }
+        }
+
+        .info-dirette h2, .box-newsletter h3 {
+            font-weight: 300;
+            font-size: 1.8rem;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .Sottotitolo-contatti, .box-newsletter p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            opacity: 0.85;
+            margin-bottom: 30px;
+        }
+
+        /* Dettagli Contatto (Email, Web) */
+        .canali-contatto {
+            margin-bottom: 20px; /* Margine ridotto per fare spazio ai social */
+        }
+        .contatto-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+        .contatto-item i {
+            font-size: 1.2rem;
+            opacity: 0.7;
+        }
+        .contatto-item a {
+            color: inherit;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        .contatto-item a:hover {
+            opacity: 0.6;
+        }
+
+        /* Icone Social */
+        .social-links {
+            display: flex;
+            gap: 22px;
+            margin-bottom: 30px;
+        }
+        .social-links a {
+            color: #1a1a1a;
+            font-size: 1.5rem;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+        .social-links a:hover {
+            opacity: 0.6;
+            transform: translateY(-3px); /* Effetto sollevamento al passaggio del mouse */
+        }
+
+        /* Linea separatrice */
+        .linea-separatrice {
+            border: none;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            margin: 0 0 35px 0;
+            width: 100%;
+        }
+
+        /* Moduli (Form) Generali */
+        .input-field, .input-textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            background: transparent;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            border-radius: 4px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .input-field:focus, .input-textarea:focus {
+            outline: none;
+            border-color: #1a1a1a;
+            box-shadow: 0 0 0 1px #1a1a1a;
+        }
+
+        .input-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btn-invia, .btn-iscriviti {
+            display: inline-block;
+            background: #1a1a1a;
+            color: #f8f6f0;
+            border: none;
+            padding: 15px 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background 0.3s, transform 0.3s;
+            width: 100%;
+        }
+
+        .btn-invia:hover, .btn-iscriviti:hover {
+            background: #333;
+            transform: translateY(-2px);
+        }
+
+        /* Box Newsletter con sfondo leggero per distinguerlo */
+        .box-newsletter {
+            background: rgba(0, 0, 0, 0.03);
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+    </style>
 </head>
 <body>
 
@@ -30,7 +167,7 @@
             
             <div class="info-dirette">
                 <h2>Contatti</h2>
-                <p class="Sottotitolo-contatti">Per informazioni, concerti, booking o collaborazioni editoriali.</p>
+                <p class="Sottotitolo-contatti">Per booking, collaborazioni editoriali, informazioni o semplicemente per salutarmi.</p>
                 
                 <div class="canali-contatto">
                     <div class="contatto-item">
@@ -42,15 +179,49 @@
                         <span>www.maurospano.com</span>
                     </div>
                 </div>
+
+                <div class="social-links">
+                    <!-- SOSTITUISCI IL SIMBOLO # CON I LINK VERI AI TUOI PROFILI -->
+                    <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" target="_blank" title="Spotify"><i class="fab fa-spotify"></i></a>
+                </div>
+
+                <!-- Linea Sottile Divisoria -->
+                <hr class="linea-separatrice">
+
+                <!-- Modulo di Contatto Diretto (Usa FormSubmit) -->
+                <!-- SOSTITUISCI info@maurospano.com CON LA TUA VERA EMAIL -->
+                <form action="https://formsubmit.co/maurospano95@gmail.com" method="POST" class="form-messaggio">
+                    
+                    <!-- Honeypot per evitare lo spam dei bot -->
+                    <input type="text" name="_honey" style="display:none">
+                    
+                    <!-- Disattiva il captcha brutto di default (opzionale) -->
+                    <input type="hidden" name="_captcha" value="false">
+
+                    <!-- Pagina di "Successo" dopo l'invio (Creeremo poi una pagina grazie.html) -->
+                    <input type="hidden" name="_next" value="https://maurospano.github.io/">
+
+                    <input type="text" name="Nome" placeholder="Il tuo nome" required class="input-field">
+                    <input type="email" name="Email" placeholder="La tua email" required class="input-field">
+                    <input type="text" name="_subject" placeholder="Oggetto del messaggio" class="input-field">
+                    <textarea name="Messaggio" placeholder="Scrivi qui il tuo messaggio..." required class="input-textarea"></textarea>
+                    
+                    <button type="submit" class="btn-invia">Invia Messaggio</button>
+                </form>
+
             </div>
 
             <div class="box-newsletter">
                 <h3>Newsletter</h3>
-                <p>Iscriviti per ricevere aggiornamenti sulle prossime uscite discografiche, concerti e la pubblicazione di nuovi spartiti.</p>
+                <p>Per ricevere in anteprima aggiornamenti sulle prossime uscite discografiche, concerti e la pubblicazione di nuovi spartiti.</p>
                 
-                <form class="form-newsletter">
-                    <input type="email" placeholder="Il tuo indirizzo email" required class="input-email">
-                    <button type="submit" class="btn-iscriviti">Iscriviti</button>
+                <!-- IL LINK NELL'ACTION ANDRÀ SOSTITUITO CON QUELLO FORNITO DA MAILCHIMP/MAILERLITE -->
+                <form action="#" method="POST" class="form-newsletter">
+                    <input type="email" name="EMAIL" placeholder="Il tuo indirizzo email" required class="input-field">
+                    <button type="submit" class="btn-iscriviti" >Iscriviti</button>
+                    
                 </form>
             </div>
 
