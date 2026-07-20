@@ -20,16 +20,14 @@
 
 body {
     min-height: 100vh;
-    /* SFONDO CHIARO: Toni caldi, avorio e pergamena */
     background: 
         linear-gradient(135deg, rgba(248, 246, 240, 0.95), rgba(242, 239, 233, 0.97), rgba(235, 232, 225, 0.98)),
         url('../immagini/sfondo.jpg') no-repeat center center fixed;
     background-size: cover;
-    /* UNICO FONT PER TUTTO IL SITO: Neutro, elegante, non invasivo */
     font-family: 'Montserrat', sans-serif;
     color: #1a1a1a;
     animation: fadeInPagina 1.2s ease-out forwards; 
-    text-align: justify;
+    text-align: left;
     text-justify: inter-character;
 }
 
@@ -38,7 +36,6 @@ body {
     margin: 140px auto 80px auto;
     padding: 0 40px;
 }
-
 
 /* ==========================================
    2. LANDING PAGE (index.html)
@@ -58,10 +55,9 @@ body {
 }
 
 .titolo-artista {
-    /* Rimossa la font particolare. Sfruttiamo l'eleganza dello spazio */
     font-weight: 300;
     font-size: 3rem;
-    letter-spacing: 12px; /* Spaziatura ampia per dare respiro */
+    letter-spacing: 12px; 
     margin-bottom: 15px;
     text-transform: uppercase;
     text-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
@@ -96,7 +92,6 @@ body {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* SELETTORE LINGUA */
 .scelta-lingua-nuda {
     display: flex;
     justify-content: center;
@@ -126,7 +121,6 @@ body {
     font-weight: 200;
     font-size: 1rem;
 }
-
 
 /* ==========================================
    3. MENU DI NAVIGAZIONE GLOBALE
@@ -177,9 +171,8 @@ body {
     opacity: 1;
 }
 
-
 /* ==========================================
-   4. NUOVA HOME (NEWS & FEATURED VIDEO)
+   4. HOME (NEWS & FEATURED VIDEO)
    ========================================== */
 .sezione-novita {
     display: flex;
@@ -289,152 +282,201 @@ body {
     }
 }
 
+/* ==========================================
+   4.1 BANNER HERO (HOME)
+   ========================================== */
+.hero-home {
+    position: relative;
+    width: 100%;
+    height: 75vh; /* Altezza del banner (occupa il 75% della schermata). Modificabile. */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-home-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* Applica le regole di copertura sia se usi un video, sia se usi un'immagine */
+.hero-home-bg video,
+.hero-home-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Regola lo "0.4" da 0 a 1 per scurire più o meno il video */
+    z-index: 1;
+}
+
+.hero-home-testo {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #f8f6f0;
+}
+
+.hero-home-testo h1 {
+    font-weight: 300;
+    font-size: 4rem;
+    letter-spacing: 14px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+.hero-home-testo p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    opacity: 0.9;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 850px) {
+    .hero-home {
+        height: 60vh; /* Riduce l'altezza del banner su smartphone */
+    }
+    .hero-home-testo h1 {
+        font-size: 2.2rem;
+        letter-spacing: 8px;
+    }
+    .hero-home-testo p {
+        font-size: 0.85rem;
+        letter-spacing: 4px;
+    }
+}
+
+/* Modifica il margine superiore del blocco inferiore solo per la Home, 
+   altrimenti ci sarebbe troppo spazio vuoto sotto il nuovo banner */
+.main-home {
+    margin-top: 80px; 
+}
 
 /* ==========================================
-5. PAGINA BIO EDITORIALE
-========================================== */
-
-.hero-bio {
-position: relative;
-height: 60vh;
-display: flex;
-align-items: center;
-justify-content: center;
-margin-bottom: 80px;
-background: url('../immagini/bio-hero.jpg') center center / cover no-repeat;
+   5. PAGINA BIO EDITORIALE
+   ========================================== */
+.hero-bio { 
+    position: relative; 
+    height: 60vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    margin-bottom: 80px; 
+    background: url('../immagini/bio/bio-hero.jpg') center center / cover no-repeat; 
 }
 
-.hero-bio::before {
-content: '';
-position: absolute;
-top: 0; left: 0; width: 100%; height: 100%;
-/* Overlay scuro per far leggere sempre il testo chiaro */
-background: rgba(0, 0, 0, 0.4);
+.hero-bio::before { 
+    content: ''; 
+    position: absolute; 
+    top: 0; left: 0; width: 100%; height: 100%; 
+    background: rgba(0, 0, 0, 0.4); 
 }
 
-.hero-bio h1 {
-position: relative;
-z-index: 1;
-color: #f8f6f0;
-font-weight: 300;
-font-size: 3.5rem;
-letter-spacing: 10px;
-text-transform: uppercase;
-text-align: center;
-text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+.hero-bio h1 { 
+    position: relative; 
+    z-index: 1; color: #f8f6f0; 
+    font-weight: 300; font-size: 3.5rem; letter-spacing: 10px; 
+    text-transform: uppercase; text-align: center; 
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); 
 }
 
-.testo-bio {
-max-width: 850px;
-margin: 0 auto 60px auto;
-padding: 0 40px;
+@media (max-width: 850px) { 
+    .hero-bio h1 { font-size: 2.2rem; letter-spacing: 5px; padding: 0 20px; } 
 }
 
-.testo-bio p {
-font-size: 1.05rem;
-line-height: 1.9;
-font-weight: 400;
-opacity: 0.85;
-margin-bottom: 40px;
+.testo-bio { max-width: 850px; margin: 0 auto 60px auto; padding: 0 40px; }
+.testo-bio p { font-size: 1.05rem; line-height: 1.9; font-weight: 400; opacity: 0.85; margin-bottom: 40px; }
+
+.bio-gallery-container { max-width: 1000px; margin: 0 auto 80px auto; padding: 0 20px; }
+.bio-gallery-scroll { 
+    display: flex; gap: 20px; overflow-x: auto; padding-bottom: 20px; 
+    scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; 
+}
+.bio-gallery-scroll::-webkit-scrollbar { display: none; } 
+.bio-gallery-scroll img { 
+    flex: 0 0 85%; max-width: 600px; height: 450px; object-fit: cover; 
+    border-radius: 4px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
+    scroll-snap-align: center; filter: brightness(0.95); 
 }
 
-.bio-immagine-intext {
-width: 100%;
-margin: 60px 0;
-border-radius: 4px;
-box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
-overflow: hidden;
+@media (max-width: 850px) { .bio-gallery-scroll img { flex: 0 0 90%; height: 300px; } }
+
+.accordion-cv { max-width: 850px; margin: 0 auto 120px auto; padding: 0 40px; }
+.accordion-cv details { border-bottom: 1px solid rgba(0, 0, 0, 0.1); padding: 20px 0; }
+.accordion-cv summary { 
+    font-size: 1.4rem; font-weight: 300; letter-spacing: 4px; 
+    text-transform: uppercase; cursor: pointer; list-style: none; 
+    display: flex; justify-content: space-between; align-items: center; color: #1a1a1a; 
+}
+.accordion-cv summary::-webkit-details-marker { display: none; }
+.accordion-cv summary::after { content: '+'; font-size: 1.8rem; font-weight: 200; transition: transform 0.3s ease; }
+.accordion-cv details[open] summary::after { transform: rotate(45deg); }
+.accordion-cv .details-content { padding: 25px 0 10px 0; font-size: 0.95rem; line-height: 1.8; opacity: 0.85; }
+
+.lista-cv { list-style: none; padding: 0; margin: 0; }
+.lista-cv li { position: relative; padding-left: 20px; margin-bottom: 12px; text-align: left; }
+.lista-cv li::before { content: "•"; position: absolute; left: 0; top: 0; color: #1a1a1a; opacity: 0.5; }
+
+/* ==========================================
+   5.1 GALLERIA BIO - FRECCE DI SCORRIMENTO
+   ========================================== */
+.gallery-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 
-.bio-immagine-intext img {
-width: 100%;
-height: auto;
-display: block;
-filter: brightness(0.9);
+.btn-scroll {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(248, 246, 240, 0.9); /* Sfondo chiaro leggermente trasparente */
+    border: 1px solid rgba(0,0,0,0.1);
+    color: #1a1a1a;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
 }
 
-/* --- ACCORDION ESPANDIBILI --- */
-.accordion-cv {
-max-width: 850px;
-margin: 0 auto 120px auto;
-padding: 0 40px;
+.btn-scroll:hover {
+    background: #1a1a1a;
+    color: #f8f6f0;
+    transform: translateY(-50%) scale(1.1); /* Si ingrandisce leggermente al passaggio del mouse */
 }
 
-.accordion-cv details {
-border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-padding: 20px 0;
-}
+/* Posizionamento ai bordi */
+.btn-scroll-left { left: 15px; }
+.btn-scroll-right { right: 15px; }
 
-.accordion-cv summary {
-font-size: 1.4rem;
-font-weight: 300;
-letter-spacing: 4px;
-text-transform: uppercase;
-cursor: pointer;
-list-style: none;
-display: flex;
-justify-content: space-between;
-align-items: center;
-color: #1a1a1a;
-}
-
-/* Nasconde la freccetta di default del browser */
-.accordion-cv summary::-webkit-details-marker {
-display: none;
-}
-
-/* Crea la nostra icona personalizzata (+) */
-.accordion-cv summary::after {
-content: '+';
-font-size: 1.8rem;
-font-weight: 200;
-transition: transform 0.3s ease;
-}
-
-/* Ruota il (+) in una (x) quando il menu è aperto */
-.accordion-cv details[open] summary::after {
-transform: rotate(45deg);
-}
-
-.accordion-cv .details-content {
-padding: 25px 0 10px 0;
-font-size: 0.95rem;
-line-height: 1.8;
-opacity: 0.8;
-}
-
-/* --- ELENCHI NELLA BIO --- */
-.lista-cv {
-list-style: none;
-padding: 0;
-margin: 0;
-}
-
-.lista-cv li {
-position: relative;
-padding-left: 20px;
-margin-bottom: 12px;
-text-align: left;
-}
-
-.lista-cv li::before {
-content: "•";
-position: absolute;
-left: 0;
-top: 0;
-color: #1a1a1a;
-opacity: 0.5;
-}
-
-/* Adattamento per gli schermi più piccoli */
 @media (max-width: 850px) {
-.hero-bio h1 {
-font-size: 2.2rem;
-letter-spacing: 5px;
-padding: 0 20px;
+    /* Su smartphone e tablet nascondiamo le frecce, poiché il touch è lo strumento nativo migliore */
+    .btn-scroll {
+        display: none; 
+    }
 }
-}
-
 
 /* ==========================================
    6. PAGINA WORKS (ALBUM)
@@ -567,7 +609,6 @@ padding: 0 20px;
     }
 }
 
-
 /* ==========================================
    7. PAGINA SPARTITI (SHOP)
    ========================================== */
@@ -690,272 +731,218 @@ padding: 0 20px;
 }
 
 /* ==========================================
-7. PAGINA ALBUM (Today's Office)
-========================================== */
-
-/* 1. HERO IMAGE (Senza testo) */
+   8. PAGINA ALBUM (Today's Office)
+   ========================================== */
 .hero-todays-office {
-width: 100%;
-height: 60vh;
-background: url('../immagini/todays_office/todays_office_intestazione.png') center center / cover no-repeat;
-margin-bottom: 60px;
+    width: 100%;
+    height: 60vh;
+    background: url('../immagini/todays_office/todays_office_intestazione.png') center center / cover no-repeat;
+    margin-bottom: 60px;
 }
 
-/* 2. INTRODUZIONE AL PROGETTO */
 .intro-progetto {
-max-width: 850px;
-margin: 0 auto 80px auto;
-padding: 0 40px;
-text-align: center;
+    max-width: 850px;
+    margin: 0 auto 80px auto;
+    padding: 0 40px;
+    text-align: center;
 }
+
 .intro-progetto h1 {
-font-weight: 400;
-font-size: 2.5rem;
-letter-spacing: 6px;
-margin-bottom: 20px;
-text-transform: uppercase;
+    font-weight: 400;
+    font-size: 2.5rem;
+    letter-spacing: 6px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
 }
+
 .intro-progetto p {
-font-size: 1.05rem;
-line-height: 1.9;
-opacity: 0.85;
+    font-size: 1.05rem;
+    line-height: 1.9;
+    opacity: 0.85;
 }
 
-/* 3. LAYOUT DEI SINGOLI BRANI */
 .brano-container {
-max-width: 1000px;
-margin: 0 auto 100px auto;
-padding: 0 40px;
-display: grid;
-grid-template-columns: 1fr 1.5fr;
-gap: 50px;
-align-items: center;
+    max-width: 1000px;
+    margin: 0 auto 100px auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 50px;
+    align-items: center;
 }
 
-/* Alternanza: immagine a destra nei blocchi con classe .invertito */
+/* Nota: la classe invertito è stata rimossa dall'HTML per mantenere tutto a sinistra, ma la si può lasciare nel CSS per eventuali usi futuri */
 .brano-container.invertito {
-grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 1.5fr 1fr;
 }
-.brano-container.invertito .brano-testo {
-grid-column: 1;
-grid-row: 1;
-}
-.brano-container.invertito .brano-cover {
-grid-column: 2;
-grid-row: 1;
-}
+.brano-container.invertito .brano-testo { grid-column: 1; grid-row: 1; }
+.brano-container.invertito .brano-cover { grid-column: 2; grid-row: 1; }
 
-/* Adattamento per Smartphone */
 @media (max-width: 850px) {
-.brano-container, .brano-container.invertito {
-grid-template-columns: 1fr;
-gap: 30px;
-text-align: center;
-}
-.brano-container.invertito .brano-testo {
-grid-column: 1;
-grid-row: 2;
-}
-.brano-container.invertito .brano-cover {
-grid-column: 1;
-grid-row: 1;
-}
+    .brano-container, .brano-container.invertito {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    .brano-container.invertito .brano-testo { grid-column: 1; grid-row: 2; }
+    .brano-container.invertito .brano-cover { grid-column: 1; grid-row: 1; }
 }
 
-/* 4. COVER E TESTO */
 .brano-cover img {
-width: 100%;
-height: auto;
-border-radius: 4px;
-box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-transition: transform 0.3s ease;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
 }
-.brano-cover img:hover {
-transform: scale(1.02);
-}
+.brano-cover img:hover { transform: scale(1.02); }
 
 .brano-testo h2 {
-font-weight: 400;
-font-size: 2rem;
-letter-spacing: 4px;
-margin-bottom: 15px;
-text-transform: uppercase;
+    font-weight: 400;
+    font-size: 2rem;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
 }
-.brano-testo p {
-font-size: 0.95rem;
-line-height: 1.8;
-opacity: 0.85;
-margin-bottom: 30px;
-}
+.brano-testo p { font-size: 0.95rem; line-height: 1.8; opacity: 0.85; margin-bottom: 30px; }
 
-/* 5. BOTTONI D'AZIONE */
-.track-actions {
-display: flex;
-gap: 15px;
-flex-wrap: wrap;
-}
-@media (max-width: 850px) {
-.track-actions {
-justify-content: center;
-}
-}
+.track-actions { display: flex; gap: 15px; flex-wrap: wrap; }
+@media (max-width: 850px) { .track-actions { justify-content: center; } }
 
 .btn-track {
-display: inline-flex;
-align-items: center;
-gap: 10px;
-padding: 12px 20px;
-font-size: 0.85rem;
-letter-spacing: 2px;
-text-transform: uppercase;
-text-decoration: none;
-border-radius: 4px;
-transition: all 0.3s ease;
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 12px 20px; font-size: 0.85rem; letter-spacing: 2px;
+    text-transform: uppercase; text-decoration: none; border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
+.btn-spotify { background-color: transparent; color: #1a1a1a; border: 1px solid rgba(0,0,0,0.2); }
+.btn-spotify:hover { background-color: #1DB954; color: #fff; border-color: #1DB954; }
 
-.btn-spotify {
-background-color: transparent;
-color: #1a1a1a;
-border: 1px solid rgba(0,0,0,0.2);
-}
-.btn-spotify:hover {
-background-color: #1DB954; /* Verde Spotify */
-color: #fff;
-border-color: #1DB954;
-}
+.btn-youtube { background-color: transparent; color: #1a1a1a; border: 1px solid rgba(0,0,0,0.2); }
+.btn-youtube:hover { background-color: #FF0000; color: #fff; border-color: #FF0000; }
 
-.btn-youtube {
-background-color: transparent;
-color: #1a1a1a;
-border: 1px solid rgba(0,0,0,0.2);
-}
-.btn-youtube:hover {
-background-color: #FF0000; /* Rosso YouTube */
-color: #fff;
-border-color: #FF0000;
-}
-
-.btn-score {
-background-color: #1a1a1a;
-color: #f8f6f0;
-border: 1px solid #1a1a1a;
-}
-.btn-score:hover {
-background-color: #333;
-transform: translateY(-2px);
-box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
+.btn-score { background-color: #1a1a1a; color: #f8f6f0; border: 1px solid #1a1a1a; }
+.btn-score:hover { background-color: #333; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 
 /* ==========================================
-   8. PAGINA CONTATTI & NEWSLETTER
+   9. PAGINA CONTATTI & NEWSLETTER
    ========================================== */
 .layout-contatti {
+    max-width: 1000px;
+    margin: 60px auto 100px auto;
+    padding: 0 40px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    text-align: left;
-    margin-top: 40px;
+    gap: 60px;
+    align-items: start;
+}
+
+@media (max-width: 850px) {
+    .layout-contatti {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        padding: 0 20px;
+    }
 }
 
 .info-dirette h2, .box-newsletter h3 {
     font-weight: 300;
-    font-size: 2rem;
-    letter-spacing: 6px;
-    margin-bottom: 25px;
+    font-size: 1.8rem;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
     text-transform: uppercase;
-}
-
-.box-newsletter h3 {
-    font-size: 1.6rem;
 }
 
 .Sottotitolo-contatti, .box-newsletter p {
-    font-weight: 400;
-    opacity: 0.8;
-    line-height: 1.8;
-    margin-bottom: 40px;
     font-size: 0.95rem;
+    line-height: 1.8;
+    opacity: 0.85;
+    margin-bottom: 30px;
 }
 
-.canali-contatto {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+.canali-contatto { margin-bottom: 20px; }
+.contatto-item { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; font-size: 1.05rem; }
+.contatto-item i { font-size: 1.2rem; opacity: 0.7; }
+.contatto-item a { color: inherit; text-decoration: none; transition: opacity 0.3s; }
+.contatto-item a:hover { opacity: 0.6; }
+
+.social-links { display: flex; gap: 22px; margin-bottom: 30px; }
+.social-links a { color: #1a1a1a; font-size: 1.5rem; transition: opacity 0.3s, transform 0.3s; }
+.social-links a:hover { opacity: 0.6; transform: translateY(-3px); }
+
+.linea-separatrice { border: none; border-top: 1px solid rgba(0, 0, 0, 0.1); margin: 0 0 35px 0; width: 100%; }
+
+.input-field, .input-textarea {
+    width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid rgba(0, 0, 0, 0.2);
+    background: transparent; font-family: 'Montserrat', sans-serif; font-size: 0.95rem;
+    border-radius: 4px; transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.contatto-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    font-size: 1.1rem;
-    font-weight: 400;
+.input-field:focus, .input-textarea:focus { outline: none; border-color: #1a1a1a; box-shadow: 0 0 0 1px #1a1a1a; }
+.input-textarea { resize: vertical; min-height: 120px; }
+
+.btn-invia, .btn-iscriviti {
+    display: inline-block; background: #1a1a1a; color: #f8f6f0; border: none;
+    padding: 15px 30px; font-family: 'Montserrat', sans-serif; font-size: 0.9rem;
+    letter-spacing: 2px; text-transform: uppercase; cursor: pointer; border-radius: 4px;
+    transition: background 0.3s, transform 0.3s; width: 100%;
 }
 
-.contatto-item i {
-    opacity: 0.5;
-    width: 20px;
-}
+.btn-invia:hover, .btn-iscriviti:hover { background: #333; transform: translateY(-2px); }
 
-.contatto-item a {
-    color: #1a1a1a;
-    text-decoration: none;
-    transition: opacity 0.3s ease;
-}
+.box-newsletter { background: rgba(0, 0, 0, 0.03); padding: 40px; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.05); }
 
-.contatto-item a:hover {
-    opacity: 0.7;
-}
-
-.form-newsletter {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.input-email {
-    width: 100%;
-    padding: 14px;
+/* ==========================================
+   10. PAGINA GRAZIE (CONFERMA INVIO)
+   ========================================== */
+.layout-grazie {
+    max-width: 600px;
+    margin: 80px auto 120px auto;
+    padding: 50px 40px;
+    text-align: center;
     background: rgba(0, 0, 0, 0.02);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 2px;
-    color: #1a1a1a;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    transition: all 0.4s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
 }
 
-.input-email:focus {
-    outline: none;
-    background: rgba(0, 0, 0, 0.04);
-    border-color: rgba(0, 0, 0, 0.3);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+.layout-grazie i {
+    font-size: 3.5rem;
+    color: #1a1a1a;
+    margin-bottom: 25px;
+    opacity: 0.8;
 }
 
-.btn-iscriviti {
-    padding: 14px;
-    background: transparent;
-    border: 1px solid #1a1a1a;
-    color: #1a1a1a;
-    font-family: 'Montserrat', sans-serif;
+.layout-grazie h2 {
+    font-weight: 300;
+    font-size: 2rem;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.85rem;
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.btn-iscriviti:hover {
+.layout-grazie p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    opacity: 0.85;
+    margin-bottom: 45px;
+}
+
+.btn-home {
+    display: inline-block;
     background: #1a1a1a;
     color: #f8f6f0;
-    letter-spacing: 4px;
+    text-decoration: none;
+    padding: 15px 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: background 0.3s, transform 0.3s;
 }
 
-@media (max-width: 800px) {
-    .layout-contatti {
-        grid-template-columns: 1fr;
-        gap: 60px;
-    }
+.btn-home:hover {
+    background: #333;
+    transform: translateY(-2px);
 }

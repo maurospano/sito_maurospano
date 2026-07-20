@@ -25,11 +25,32 @@
         </nav>
     </header>
 
-    <main class="contenuto-pagine">
+    <!-- NUOVO BANNER HERO A TUTTA LARGHEZZA -->
+    <section class="hero-home">
+        <div class="hero-home-bg">
+            <!-- Il tag video è configurato per partire in automatico, in loop e senza audio. 
+                 Se preferisci un'immagine statica, rimuovi il tag <video> e usa: 
+                 <img src="immagini/home/tuo-banner.jpg" alt="Mauro Spanò Banner"> -->
+            <video autoplay loop muted playsinline poster="immagini/home/hero-fallback.jpg">
+                <source src="immagini/home/hero-animato.mp4" type="video/mp4">
+            </video>
+            
+            <!-- Questo div funge da filtro scuro per far risaltare il testo bianco -->
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <div class="hero-home-testo">
+            <h1>MAURO SPANÒ</h1>
+            <p>Pianist & Composer</p>
+        </div>
+    </section>
+
+    <!-- Aggiunta la classe main-home per ridurre il margine superiore in questa pagina specifica -->
+    <main class="contenuto-pagine main-home">
         
         <section class="sezione-novita">
             <div class="novita-copertina">
-                <img src="immagini/todays_office/Artwork - Web - Collision.jpg" alt="Ultima Uscita">
+                <img src="immagini/home/Artwork - Web - Collision.jpg" alt="Ultima Uscita">
             </div>
             <div class="novita-testo">
                 <span class="badge-novita">Ultima Uscita</span>
@@ -41,14 +62,14 @@
             </div>
         </section>
 
-<section class="sezione-video-home">
+        <section class="sezione-video-home">
             <h3>Featured Video</h3>
             <div class="video-container">
                <iframe src="https://www.youtube.com/embed/Apg9X3yu4I8?si=amS_ujyCJ8p02bYg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
         </section>
 
     </main>
 
 </body>
 </html>
-

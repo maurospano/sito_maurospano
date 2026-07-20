@@ -8,42 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Mantengo il collegamento al tuo CSS principale per il menu e il resto del sito -->
+    <!-- Collegamento al CSS principale, che conterrà anche gli stili della Bio -->
     <link rel="stylesheet" href="css/stile.css">
-    
-    <!-- Stili specifici solo per questa pagina Bio -->
-    <style>
-        /* 1. EROE (Immagine in alto) */
-        .hero-bio { position: relative; height: 60vh; display: flex; align-items: center; justify-content: center; margin-bottom: 80px; background: url('immagini/bio-hero.jpg') center center / cover no-repeat; }
-        .hero-bio::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); }
-        .hero-bio h1 { position: relative; z-index: 1; color: #f8f6f0; font-weight: 300; font-size: 3.5rem; letter-spacing: 10px; text-transform: uppercase; text-align: center; text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); }
-        @media (max-width: 850px) { .hero-bio h1 { font-size: 2.2rem; letter-spacing: 5px; padding: 0 20px; } }
-
-        /* 2. TESTO BIOGRAFIA */
-        .testo-bio { max-width: 850px; margin: 0 auto 60px auto; padding: 0 40px; }
-        .testo-bio p { font-size: 1.05rem; line-height: 1.9; font-weight: 400; opacity: 0.85; margin-bottom: 40px; }
-
-        /* 3. GALLERIA FOTOGRAFICA SCORREVOLE */
-        .bio-gallery-container { max-width: 1000px; margin: 0 auto 80px auto; padding: 0 20px; }
-        .bio-gallery-scroll { display: flex; gap: 20px; overflow-x: auto; padding-bottom: 20px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
-        .bio-gallery-scroll::-webkit-scrollbar { display: none; } /* Nasconde barra su Chrome/Safari */
-        .bio-gallery-scroll img { flex: 0 0 85%; max-width: 600px; height: 450px; object-fit: cover; border-radius: 4px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); scroll-snap-align: center; filter: brightness(0.95); }
-        @media (max-width: 850px) { .bio-gallery-scroll img { flex: 0 0 90%; height: 300px; } }
-
-        /* 4. ACCORDION ESPANDIBILI */
-        .accordion-cv { max-width: 850px; margin: 0 auto 120px auto; padding: 0 40px; }
-        .accordion-cv details { border-bottom: 1px solid rgba(0, 0, 0, 0.1); padding: 20px 0; }
-        .accordion-cv summary { font-size: 1.4rem; font-weight: 300; letter-spacing: 4px; text-transform: uppercase; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; color: #1a1a1a; }
-        .accordion-cv summary::-webkit-details-marker { display: none; }
-        .accordion-cv summary::after { content: '+'; font-size: 1.8rem; font-weight: 200; transition: transform 0.3s ease; }
-        .accordion-cv details[open] summary::after { transform: rotate(45deg); }
-        .accordion-cv .details-content { padding: 25px 0 10px 0; font-size: 0.95rem; line-height: 1.8; opacity: 0.85; }
-
-        /* 5. ELENCHI (Indentazione appesa corretta) */
-        .lista-cv { list-style: none; padding: 0; margin: 0; }
-        .lista-cv li { position: relative; padding-left: 20px; margin-bottom: 12px; text-align: left; }
-        .lista-cv li::before { content: "•"; position: absolute; left: 0; top: 0; color: #1a1a1a; opacity: 0.5; }
-    </style>
 </head>
 <body>
 
@@ -76,16 +42,26 @@
             <p>Oggi, sebbene l'improvvisazione rimanga uno strumento espressivo per lui indispensabile, la scrittura è la dimensione che più lo completa. Guardare uno spartito finito gli restituisce la stessa soddisfazione di un pittore davanti alla sua tela ultimata; scorgere nuovi dettagli tra le sue pieghe compositive è come scoprire sfumature inedite in un film amato e visto mille volte. In questo senso, persino il limite della pagina scritta si trasforma in un perimetro di sicurezza, intimità e assoluta libertà creativa.</p>
         </section>
 
-        <!-- 3) Nuova Galleria a scorrimento orizzontale -->
+        <!-- 3) Nuova Galleria a scorrimento orizzontale con frecce -->
         <section class="bio-gallery-container">
-            <div class="bio-gallery-scroll">
-                <img src="immagini/bio-1.jpg" alt="Mauro Spanò 1">
-                <img src="immagini/bio-2.jpg" alt="Mauro Spanò 2">
-                <img src="immagini/bio-3.jpg" alt="Mauro Spanò 3">
-                <img src="immagini/bio-4.jpg" alt="Mauro Spanò 4">
-                <img src="immagini/bio-5.jpg" alt="Mauro Spanò 5">
-                <!-- Se vuoi aggiungere una terza foto, scommenta la riga sotto -->
-                <!-- <img src="immagini/bio-3.jpg" alt="Ritratto Mauro Spanò"> -->
+            <div class="gallery-wrapper">
+                <!-- Bottone freccia Sinistra -->
+                <button class="btn-scroll btn-scroll-left" id="scrollLeft" aria-label="Scorri a sinistra">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="bio-gallery-scroll" id="galleryScroll">
+                    <img src="immagini/bio/bio-1.jpg" alt="Mauro Spanò 1">
+                    <img src="immagini/bio/bio-2.jpg" alt="Mauro Spanò 2">
+                    <img src="immagini/bio/bio-3.jpg" alt="Mauro Spanò 3">
+                    <img src="immagini/bio/bio-4.jpg" alt="Mauro Spanò 4">
+                    <img src="immagini/bio/bio-5.jpg" alt="Mauro Spanò 5">
+                </div>
+
+                <!-- Bottone freccia Destra -->
+                <button class="btn-scroll btn-scroll-right" id="scrollRight" aria-label="Scorri a destra">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </section>
 
@@ -140,5 +116,24 @@
 
     </main>
 
+    <!-- SCRIPT PER LO SCORRIMENTO DELLA GALLERIA -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const scrollContainer = document.getElementById('galleryScroll');
+            const scrollLeftBtn = document.getElementById('scrollLeft');
+            const scrollRightBtn = document.getElementById('scrollRight');
+
+            // Impostiamo di quanto scorrere (circa la larghezza di un'immagine)
+            const scrollAmount = 500; 
+
+            scrollLeftBtn.addEventListener('click', () => {
+                scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            });
+
+            scrollRightBtn.addEventListener('click', () => {
+                scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            });
+        });
+    </script>
 </body>
 </html>

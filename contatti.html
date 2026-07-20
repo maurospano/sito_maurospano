@@ -9,137 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/stile.css">
-    
-    <style>
-        .layout-contatti {
-            max-width: 1000px;
-            margin: 60px auto 100px auto;
-            padding: 0 40px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: start;
-        }
-
-        @media (max-width: 850px) {
-            .layout-contatti {
-                grid-template-columns: 1fr;
-                gap: 50px;
-                padding: 0 20px;
-            }
-        }
-
-        .info-dirette h2, .box-newsletter h3 {
-            font-weight: 300;
-            font-size: 1.8rem;
-            letter-spacing: 4px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-
-        .Sottotitolo-contatti, .box-newsletter p {
-            font-size: 0.95rem;
-            line-height: 1.8;
-            opacity: 0.85;
-            margin-bottom: 30px;
-        }
-
-        .canali-contatto {
-            margin-bottom: 20px;
-        }
-        .contatto-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
-            font-size: 1.05rem;
-        }
-        .contatto-item i {
-            font-size: 1.2rem;
-            opacity: 0.7;
-        }
-        .contatto-item a {
-            color: inherit;
-            text-decoration: none;
-            transition: opacity 0.3s;
-        }
-        .contatto-item a:hover {
-            opacity: 0.6;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 22px;
-            margin-bottom: 30px;
-        }
-        .social-links a {
-            color: #1a1a1a;
-            font-size: 1.5rem;
-            transition: opacity 0.3s, transform 0.3s;
-        }
-        .social-links a:hover {
-            opacity: 0.6;
-            transform: translateY(-3px);
-        }
-
-        .linea-separatrice {
-            border: none;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
-            margin: 0 0 35px 0;
-            width: 100%;
-        }
-
-        .input-field, .input-textarea {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(0, 0, 0, 0.2);
-            background: transparent;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.95rem;
-            border-radius: 4px;
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-
-        .input-field:focus, .input-textarea:focus {
-            outline: none;
-            border-color: #1a1a1a;
-            box-shadow: 0 0 0 1px #1a1a1a;
-        }
-
-        .input-textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .btn-invia, .btn-iscriviti {
-            display: inline-block;
-            background: #1a1a1a;
-            color: #f8f6f0;
-            border: none;
-            padding: 15px 30px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: background 0.3s, transform 0.3s;
-            width: 100%;
-        }
-
-        .btn-invia:hover, .btn-iscriviti:hover {
-            background: #333;
-            transform: translateY(-2px);
-        }
-
-        .box-newsletter {
-            background: rgba(0, 0, 0, 0.03);
-            padding: 40px;
-            border-radius: 8px;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-        }
-    </style>
 </head>
 <body>
 
@@ -166,18 +35,18 @@
                 <div class="canali-contatto">
                     <div class="contatto-item">
                         <i class="fas fa-envelope"></i>
-                        <a href="mailto:info@maurospano.com">info@maurospano.com</a>
+                        <a href="mailto:info@maurospano.com">INSERIRE MAIL</a>
                     </div>
                     <div class="contatto-item">
                         <i class="fas fa-globe"></i>
-                        <span>www.maurospano.com</span>
+                        <span>INSERIRE SITO</span>
                     </div>
                 </div>
 
                 <div class="social-links">
-                    <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="#" target="_blank" title="Spotify"><i class="fab fa-spotify"></i></a>
+                    <a href="https://www.instagram.com/pianistoide/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@maurospanocomposer" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://open.spotify.com/intl-it/artist/2UQDedllt1dRTMkURL95TU" target="_blank" title="Spotify"><i class="fab fa-spotify"></i></a>
                 </div>
 
                 <hr class="linea-separatrice">
@@ -186,7 +55,6 @@
                     <input type="text" name="_honey" style="display:none">
                     <input type="hidden" name="_captcha" value="false">
                     
-                    <!-- Fixed redirect URL for FormSubmit -->
                     <input type="hidden" name="_next" value="https://maurospano.github.io/sito_maurospano/grazie.html">
 
                     <input type="text" name="Nome" placeholder="Il tuo nome" required class="input-field">
@@ -200,7 +68,7 @@
 
             <div class="box-newsletter">
                 <h3>Newsletter</h3>
-                <p>Per ricevere in anteprima aggiornamenti sulle prossime uscite discografiche, concerti e la pubblicazione di nuovi spartiti.</p>
+                <p>Per ricevere in anteprima aggiornamenti sulle prossime uscite discografiche, concerti e pubblicazioni.</p>
                 
                 <form action="#" method="POST" class="form-newsletter">
                     <input type="email" name="EMAIL" placeholder="Il tuo indirizzo email" required class="input-field">
