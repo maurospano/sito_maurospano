@@ -19,23 +19,17 @@
                 <li><a href="home.html" class="attivo">Home</a></li>
                 <li><a href="bio.html">Bio</a></li>
                 <li><a href="works.html">Works</a></li>
-                <li><a href="spartiti.html">Shop</a></li>
+                <li><a href="shop.html">Shop</a></li>
                 <li><a href="contatti.html">Contatti</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- NUOVO BANNER HERO A TUTTA LARGHEZZA -->
     <section class="hero-home">
         <div class="hero-home-bg">
-            <!-- Il tag video è configurato per partire in automatico, in loop e senza audio. 
-                 Se preferisci un'immagine statica, rimuovi il tag <video> e usa: 
-                 <img src="immagini/home/tuo-banner.jpg" alt="Mauro Spanò Banner"> -->
             <video autoplay loop muted playsinline poster="immagini/home/hero-fallback.jpg">
                 <source src="immagini/home/hero-animato.mp4" type="video/mp4">
             </video>
-            
-            <!-- Questo div funge da filtro scuro per far risaltare il testo bianco -->
             <div class="hero-overlay"></div>
         </div>
         
@@ -45,10 +39,10 @@
         </div>
     </section>
 
-    <!-- Aggiunta la classe main-home per ridurre il margine superiore in questa pagina specifica -->
     <main class="contenuto-pagine main-home">
         
-        <section class="sezione-novita">
+        <!-- Aggiunta la classe "scroll-reveal" -->
+        <section class="sezione-novita scroll-reveal">
             <div class="novita-copertina">
                 <img src="immagini/home/Artwork - Web - Collision.jpg" alt="Ultima Uscita">
             </div>
@@ -62,7 +56,8 @@
             </div>
         </section>
 
-        <section class="sezione-video-home">
+        <!-- Aggiunta la classe "scroll-reveal" -->
+        <section class="sezione-video-home scroll-reveal">
             <h3>Featured Video</h3>
             <div class="video-container">
                <iframe src="https://www.youtube.com/embed/Apg9X3yu4I8?si=amS_ujyCJ8p02bYg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -71,5 +66,32 @@
 
     </main>
 
+    <!-- SCRIPT PER L'EFFETTO COMPARSA ALLO SCROLL -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Seleziona tutti gli elementi con la classe scroll-reveal
+            const revealElements = document.querySelectorAll('.scroll-reveal');
+
+            // Crea l'osservatore
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    // Se l'elemento entra nella visuale dello schermo
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visibile');
+                        // Smette di osservare l'elemento (l'animazione avviene una sola volta)
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                // Fa partire l'animazione quando il 15% dell'elemento è visibile
+                threshold: 0.15 
+            });
+
+            // Applica l'osservatore agli elementi trovati
+            revealElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
 </body>
 </html>

@@ -368,6 +368,22 @@ body {
 }
 
 /* ==========================================
+   4.2 EFFETTO COMPARSA ALLO SCROLL
+   ========================================== */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(50px); /* Sposta l'elemento 50px più in basso */
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform;
+}
+
+/* Questa classe viene aggiunta da JavaScript quando l'utente scorre */
+.scroll-reveal.visibile {
+    opacity: 1;
+    transform: translateY(0); /* Lo riporta nella sua posizione originale */
+}
+
+/* ==========================================
    5. PAGINA BIO EDITORIALE
    ========================================== */
 .hero-bio { 
@@ -400,7 +416,16 @@ body {
 }
 
 .testo-bio { max-width: 850px; margin: 0 auto 60px auto; padding: 0 40px; }
-.testo-bio p { font-size: 1.05rem; line-height: 1.9; font-weight: 400; opacity: 0.85; margin-bottom: 40px; }
+.testo-bio p { 
+    font-size: 1.05rem; 
+    line-height: 1.9; 
+    font-weight: 400; 
+    opacity: 0.85; 
+    margin-bottom: 40px; 
+    text-align: justify; /* Applica il giustificato solo qui */
+    hyphens: auto; /* Trucco fondamentale! */
+    -webkit-hyphens: auto; 
+}
 
 .bio-gallery-container { max-width: 1000px; margin: 0 auto 80px auto; padding: 0 20px; }
 .bio-gallery-scroll { 
