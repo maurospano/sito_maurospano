@@ -8,12 +8,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Questo è il collegamento fondamentale al tuo file CSS globale! -->
     <link rel="stylesheet" href="css/stile.css">
 </head>
 <body>
 
-    <!-- Menu Principale (Manteniamo 'Works' come pagina attiva) -->
     <header class="menu-principale">
         <div class="logo"><a href="home.html">MAURO SPANÒ</a></div>
         <nav>
@@ -28,8 +26,15 @@
     </header>
 
     <main>
-        <!-- 1) IMMAGINE HERO GRANDE -->
-        <section class="hero-todays-office"></section>
+        <!-- 1) IMMAGINE HERO GRANDE CON VIDEO BACKGROUND -->
+        <section class="hero-todays-office">
+            <div class="hero-bg-media">
+                <video autoplay loop muted playsinline poster="immagini/todays_office/todays_office_intestazione.png">
+                    <source src="immagini/todays_office/todays_office_animato.mp4" type="video/mp4">
+                </video>
+                <div class="hero-overlay"></div>
+            </div>
+        </section>
 
         <!-- 2) INTRODUZIONE ALBUM -->
         <section class="intro-progetto">
@@ -41,7 +46,9 @@
         =========================================== -->
         <section class="tracks-list">
 
-            <!-- TRACK 1: HOLLOW -->
+            <!-- ==========================================
+                 TRACK 1: HOLLOW (GIA' RILASCIATO)
+            =========================================== -->
             <article class="brano-container">
                 <div class="brano-cover">
                     <img src="immagini/todays_office/Artwork - Web - Hollow.jpg" alt="Hollow Cover Art">
@@ -58,7 +65,21 @@
                 </div>
             </article>
 
-            <!-- TRACK 2: ROUND GLASSES -->
+            <!-- ==========================================
+                 TRACK 2
+            =========================================== -->
+            <!-- VERSIONE SEGNAPOSTO (Attiva: Da eliminare all'uscita del brano) -->
+            <article class="brano-container">
+                <div class="brano-cover">
+                    <img src="immagini/todays_office/attesa.jpg" alt="Track 2 in arrivo">
+                </div>
+                <div class="brano-testo">
+                    <h2>Track 02</h2>
+                    <p><em>Out on [Inserire Mese/Anno]</em></p>
+                </div>
+            </article>
+
+            <!-- VERSIONE REALE (Commentata: Scommentare all'uscita del brano)
             <article class="brano-container">
                 <div class="brano-cover">
                     <img src="immagini/todays_office/Artwork - Web - Round Glasses.jpg" alt="Round Glasses Cover Art">
@@ -66,7 +87,6 @@
                 <div class="brano-testo">
                     <h2>Round Glasses</h2>
                     <p>Descrizione per Round Glasses. Sostituisci il simbolo # nei link qui sotto con gli URL reali del brano quando uscirà.</p>
-                    
                     <div class="track-actions">
                         <a href="#" target="_blank" class="btn-track btn-spotify"><i class="fab fa-spotify"></i> Spotify</a>
                         <a href="#" target="_blank" class="btn-track btn-youtube"><i class="fab fa-youtube"></i> Video</a>
@@ -74,8 +94,23 @@
                     </div>
                 </div>
             </article>
+            -->
 
-            <!-- TRACK 3: COLLISION -->
+            <!-- ==========================================
+                 TRACK 3
+            =========================================== -->
+            <!-- VERSIONE SEGNAPOSTO -->
+            <article class="brano-container">
+                <div class="brano-cover">
+                    <img src="immagini/todays_office/attesa.jpg" alt="Track 3 in arrivo">
+                </div>
+                <div class="brano-testo">
+                    <h2>Track 03</h2>
+                    <p><em>Out on [Inserire Mese/Anno]</em></p>
+                </div>
+            </article>
+
+            <!-- VERSIONE REALE 
             <article class="brano-container">
                 <div class="brano-cover">
                     <img src="immagini/todays_office/Artwork - Web - Collision.jpg" alt="Collision Cover Art">
@@ -83,7 +118,6 @@
                 <div class="brano-testo">
                     <h2>Collision</h2>
                     <p>Descrizione per Collision. Sostituisci il simbolo # nei link qui sotto con gli URL reali del brano quando uscirà.</p>
-                    
                     <div class="track-actions">
                         <a href="#" target="_blank" class="btn-track btn-spotify"><i class="fab fa-spotify"></i> Spotify</a>
                         <a href="#" target="_blank" class="btn-track btn-youtube"><i class="fab fa-youtube"></i> Video</a>
@@ -91,8 +125,23 @@
                     </div>
                 </div>
             </article>
+            -->
 
-            <!-- TRACK 4: THE AMAZING MUSHROOM -->
+            <!-- ==========================================
+                 TRACK 4
+            =========================================== -->
+            <!-- VERSIONE SEGNAPOSTO -->
+            <article class="brano-container">
+                <div class="brano-cover">
+                    <img src="immagini/todays_office/attesa.jpg" alt="Track 4 in arrivo">
+                </div>
+                <div class="brano-testo">
+                    <h2>Track 04</h2>
+                    <p><em>Out on [Inserire Mese/Anno]</em></p>
+                </div>
+            </article>
+
+            <!-- VERSIONE REALE 
             <article class="brano-container">
                 <div class="brano-cover">
                     <img src="immagini/todays_office/Artwork - Web - The Amazing Mushroom.jpg" alt="The Amazing Mushroom Cover Art">
@@ -100,7 +149,6 @@
                 <div class="brano-testo">
                     <h2>The Amazing Mushroom</h2>
                     <p>Descrizione per The Amazing Mushroom. Sostituisci il simbolo # nei link qui sotto con gli URL reali del brano quando uscirà.</p>
-                    
                     <div class="track-actions">
                         <a href="#" target="_blank" class="btn-track btn-spotify"><i class="fab fa-spotify"></i> Spotify</a>
                         <a href="#" target="_blank" class="btn-track btn-youtube"><i class="fab fa-youtube"></i> Video</a>
@@ -108,8 +156,23 @@
                     </div>
                 </div>
             </article>
+            -->
 
-            <!-- TRACK 5: LIMONCELLO WALTZ -->
+            <!-- ==========================================
+                 TRACK 5
+            =========================================== -->
+            <!-- VERSIONE SEGNAPOSTO -->
+            <article class="brano-container">
+                <div class="brano-cover">
+                    <img src="immagini/todays_office/attesa.jpg" alt="Track 5 in arrivo">
+                </div>
+                <div class="brano-testo">
+                    <h2>Track 05</h2>
+                    <p><em>Out on [Inserire Mese/Anno]</em></p>
+                </div>
+            </article>
+
+            <!-- VERSIONE REALE 
             <article class="brano-container">
                 <div class="brano-cover">
                     <img src="immagini/todays_office/Artwork - Web - Limoncello Waltz.jpg" alt="Limoncello Waltz Cover Art">
@@ -117,7 +180,6 @@
                 <div class="brano-testo">
                     <h2>Limoncello Waltz</h2>
                     <p>Descrizione per Limoncello Waltz. Sostituisci il simbolo # nei link qui sotto con gli URL reali del brano quando uscirà.</p>
-                    
                     <div class="track-actions">
                         <a href="#" target="_blank" class="btn-track btn-spotify"><i class="fab fa-spotify"></i> Spotify</a>
                         <a href="#" target="_blank" class="btn-track btn-youtube"><i class="fab fa-youtube"></i> Video</a>
@@ -125,8 +187,23 @@
                     </div>
                 </div>
             </article>
+            -->
 
-            <!-- TRACK 6: CHILD OF THE SEA -->
+            <!-- ==========================================
+                 TRACK 6
+            =========================================== -->
+            <!-- VERSIONE SEGNAPOSTO -->
+            <article class="brano-container">
+                <div class="brano-cover">
+                    <img src="immagini/todays_office/attesa.jpg" alt="Track 6 in arrivo">
+                </div>
+                <div class="brano-testo">
+                    <h2>Track 06</h2>
+                    <p><em>Out on [Inserire Mese/Anno]</em></p>
+                </div>
+            </article>
+
+            <!-- VERSIONE REALE 
             <article class="brano-container">
                 <div class="brano-cover">
                     <img src="immagini/todays_office/Artwork - Web - Child of the Sea.jpg" alt="Child of the Sea Cover Art">
@@ -134,7 +211,6 @@
                 <div class="brano-testo">
                     <h2>Child of the Sea</h2>
                     <p>Descrizione per Child of the Sea. Sostituisci il simbolo # nei link qui sotto con gli URL reali del brano quando uscirà.</p>
-                    
                     <div class="track-actions">
                         <a href="#" target="_blank" class="btn-track btn-spotify"><i class="fab fa-spotify"></i> Spotify</a>
                         <a href="#" target="_blank" class="btn-track btn-youtube"><i class="fab fa-youtube"></i> Video</a>
@@ -142,8 +218,23 @@
                     </div>
                 </div>
             </article>
+            -->
 
-            <!-- TRACK 7: OCULUS -->
+            <!-- ==========================================
+                 TRACK 7
+            =========================================== -->
+            <!-- VERSIONE SEGNAPOSTO -->
+            <article class="brano-container">
+                <div class="brano-cover">
+                    <img src="immagini/todays_office/attesa.jpg" alt="Track 7 in arrivo">
+                </div>
+                <div class="brano-testo">
+                    <h2>Track 07</h2>
+                    <p><em>Out on [Inserire Mese/Anno]</em></p>
+                </div>
+            </article>
+
+            <!-- VERSIONE REALE 
             <article class="brano-container">
                 <div class="brano-cover">
                     <img src="immagini/todays_office/Artwork - Web - Oculus.jpg" alt="Oculus Cover Art">
@@ -151,7 +242,6 @@
                 <div class="brano-testo">
                     <h2>Oculus</h2>
                     <p>Descrizione per Oculus. Sostituisci il simbolo # nei link qui sotto con gli URL reali del brano quando uscirà.</p>
-                    
                     <div class="track-actions">
                         <a href="#" target="_blank" class="btn-track btn-spotify"><i class="fab fa-spotify"></i> Spotify</a>
                         <a href="#" target="_blank" class="btn-track btn-youtube"><i class="fab fa-youtube"></i> Video</a>
@@ -159,6 +249,7 @@
                     </div>
                 </div>
             </article>
+            -->
 
         </section>
     </main>

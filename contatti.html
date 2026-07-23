@@ -35,11 +35,11 @@
                 <div class="canali-contatto">
                     <div class="contatto-item">
                         <i class="fas fa-envelope"></i>
-                        <a href="mailto:info@maurospano.com">INSERIRE MAIL</a>
+                        <a href="mailto:info@maurospano.com">info@maurospano.com</a>
                     </div>
                     <div class="contatto-item">
                         <i class="fas fa-globe"></i>
-                        <span>INSERIRE SITO</span>
+                        <span>maurospano.com</span>
                     </div>
                 </div>
 
@@ -70,9 +70,19 @@
                 <h3>Newsletter</h3>
                 <p>Per ricevere in anteprima aggiornamenti sulle prossime uscite discografiche, concerti e pubblicazioni.</p>
                 
-                <form action="#" method="POST" class="form-newsletter">
-                    <input type="email" name="EMAIL" placeholder="Il tuo indirizzo email" required class="input-field">
-                    <button type="submit" class="btn-iscriviti">Iscriviti</button>
+                <!-- INTEGRAZIONE PURA HTML PER CONVERTKIT (Senza script e popup) -->
+                <form action="https://app.kit.com/forms/9718154/subscriptions" class="form-newsletter" method="post">
+                    
+                    <!-- Campo invisibile per l'antispam richiesto da ConvertKit -->
+                    <div style="display:none;">
+                        <input name="fields[null]" type="text">
+                    </div>
+                    
+                    <input type="email" name="email_address" placeholder="Il tuo indirizzo email" required class="input-field">
+                    
+                    <button type="submit" class="btn-iscriviti">
+                        Iscriviti
+                    </button>
                 </form>
             </div>
 

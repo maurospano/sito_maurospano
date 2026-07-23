@@ -283,19 +283,19 @@ body {
 }
 
 /* ==========================================
-   4.1 BANNER HERO (HOME)
+   4.1 BANNER HERO (HOME & MODULARE)
    ========================================== */
 .hero-home {
     position: relative;
     width: 100%;
-    height: 75vh; /* Altezza del banner (occupa il 75% della schermata). Modificabile. */
+    height: 75vh; 
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
 }
 
-.hero-home-bg {
+.hero-bg-media {
     position: absolute;
     top: 0;
     left: 0;
@@ -304,9 +304,8 @@ body {
     z-index: 0;
 }
 
-/* Applica le regole di copertura sia se usi un video, sia se usi un'immagine */
-.hero-home-bg video,
-.hero-home-bg img {
+.hero-bg-media video,
+.hero-bg-media img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -318,8 +317,14 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Regola lo "0.4" da 0 a 1 per scurire più o meno il video */
+    background: rgba(0, 0, 0, 0.4); 
     z-index: 1;
+}
+
+.hero-testo-interno {
+    position: relative;
+    z-index: 2;
+    text-align: center;
 }
 
 .hero-home-testo {
@@ -349,7 +354,7 @@ body {
 
 @media (max-width: 850px) {
     .hero-home {
-        height: 60vh; /* Riduce l'altezza del banner su smartphone */
+        height: 60vh; 
     }
     .hero-home-testo h1 {
         font-size: 2.2rem;
@@ -361,8 +366,6 @@ body {
     }
 }
 
-/* Modifica il margine superiore del blocco inferiore solo per la Home, 
-   altrimenti ci sarebbe troppo spazio vuoto sotto il nuovo banner */
 .main-home {
     margin-top: 80px; 
 }
@@ -372,15 +375,14 @@ body {
    ========================================== */
 .scroll-reveal {
     opacity: 0;
-    transform: translateY(50px); /* Sposta l'elemento 50px più in basso */
+    transform: translateY(50px);
     transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
     will-change: opacity, transform;
 }
 
-/* Questa classe viene aggiunta da JavaScript quando l'utente scorre */
 .scroll-reveal.visibile {
     opacity: 1;
-    transform: translateY(0); /* Lo riporta nella sua posizione originale */
+    transform: translateY(0); 
 }
 
 /* ==========================================
@@ -393,14 +395,7 @@ body {
     align-items: center; 
     justify-content: center; 
     margin-bottom: 80px; 
-    background: url('../immagini/bio/bio-hero.jpg') center center / cover no-repeat; 
-}
-
-.hero-bio::before { 
-    content: ''; 
-    position: absolute; 
-    top: 0; left: 0; width: 100%; height: 100%; 
-    background: rgba(0, 0, 0, 0.4); 
+    overflow: hidden; 
 }
 
 .hero-bio h1 { 
@@ -422,8 +417,8 @@ body {
     font-weight: 400; 
     opacity: 0.85; 
     margin-bottom: 40px; 
-    text-align: justify; /* Applica il giustificato solo qui */
-    hyphens: auto; /* Trucco fondamentale! */
+    text-align: justify; 
+    hyphens: auto; 
     -webkit-hyphens: auto; 
 }
 
@@ -470,7 +465,7 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(248, 246, 240, 0.9); /* Sfondo chiaro leggermente trasparente */
+    background: rgba(248, 246, 240, 0.9); 
     border: 1px solid rgba(0,0,0,0.1);
     color: #1a1a1a;
     width: 45px;
@@ -489,15 +484,13 @@ body {
 .btn-scroll:hover {
     background: #1a1a1a;
     color: #f8f6f0;
-    transform: translateY(-50%) scale(1.1); /* Si ingrandisce leggermente al passaggio del mouse */
+    transform: translateY(-50%) scale(1.1); 
 }
 
-/* Posizionamento ai bordi */
 .btn-scroll-left { left: 15px; }
 .btn-scroll-right { right: 15px; }
 
 @media (max-width: 850px) {
-    /* Su smartphone e tablet nascondiamo le frecce, poiché il touch è lo strumento nativo migliore */
     .btn-scroll {
         display: none; 
     }
@@ -759,10 +752,11 @@ body {
    8. PAGINA ALBUM (Today's Office)
    ========================================== */
 .hero-todays-office {
+    position: relative;
     width: 100%;
     height: 60vh;
-    background: url('../immagini/todays_office/todays_office_intestazione.png') center center / cover no-repeat;
     margin-bottom: 60px;
+    overflow: hidden;
 }
 
 .intro-progetto {
@@ -787,6 +781,7 @@ body {
 }
 
 .brano-container {
+    position: relative; /* Aggiunto per ancorare la linea separatrice */
     max-width: 1000px;
     margin: 0 auto 100px auto;
     padding: 0 40px;
@@ -796,7 +791,18 @@ body {
     align-items: center;
 }
 
-/* Nota: la classe invertito è stata rimossa dall'HTML per mantenere tutto a sinistra, ma la si può lasciare nel CSS per eventuali usi futuri */
+/* Aggiunta della linea separatrice elegante tra i brani */
+.brano-container:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: -50px; /* Centrata perfettamente nello spazio vuoto di 100px */
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 80px); /* Allineata al testo, ignorando i 40px di padding per lato */
+    height: 1px;
+    background: rgba(0, 0, 0, 0.08); /* Colore molto delicato e non intrusivo */
+}
+
 .brano-container.invertito {
     grid-template-columns: 1.5fr 1fr;
 }

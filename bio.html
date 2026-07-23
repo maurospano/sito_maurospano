@@ -30,7 +30,19 @@
     <main>
         <!-- 1) Grande foto con titolo in sovrimpressione -->
         <section class="hero-bio">
-            <h1>Mauro Spanò - Biografia</h1>
+            <!-- Livello 0: Background animato e filtro -->
+            <div class="hero-bg-media">
+                <video autoplay loop muted playsinline poster="immagini/bio/bio-hero.jpg">
+                    <!-- Inserire il percorso corretto del file .mp4 della Bio -->
+                    <source src="immagini/bio/bio-animato.mp4" type="video/mp4">
+                </video>
+                <div class="hero-overlay"></div>
+            </div>
+            
+            <!-- Livello 2: Contenuto testuale sovrapposto -->
+            <div class="hero-testo-interno">
+                <h1>Mauro Spanò - Biografia</h1>
+            </div>
         </section>
 
         <!-- 2) Testo della biografia compattato -->
