@@ -14,7 +14,7 @@
     }
     to {
         opacity: 1;
-        filter: blur(0);
+        filter: none; /* Rimuove il filtro per non rompere il position:fixed */
     }
 }
 
@@ -630,29 +630,169 @@ body {
 /* ==========================================
    7. PAGINA SPARTITI (SHOP)
    ========================================== */
-.testata-spartiti {
+.hero-shop {
+    position: relative;
+    width: 100%;
+    height: 50vh;
     margin-bottom: 60px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    overflow: hidden;
 }
 
-.testata-spartiti h2 {
+.hero-shop h1 {
+    position: relative; 
+    z-index: 2; 
+    color: #f8f6f0; 
+    font-weight: 300; 
+    font-size: 3.5rem; 
+    letter-spacing: 10px; 
+    text-transform: uppercase; 
+    text-align: center; 
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); 
+}
+
+@media (max-width: 850px) { 
+    .hero-shop h1 { font-size: 2.2rem; letter-spacing: 5px; padding: 0 20px; } 
+}
+
+.titolo-sezione-shop {
     font-weight: 300;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     letter-spacing: 6px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    margin-top: 80px;
     text-transform: uppercase;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding-bottom: 20px;
 }
 
+/* Banner Raccolte: Aggiornato per rimuovere il tasto fisico e aggiungere i tag */
+.banner-raccolta {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 280px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    color: #f8f6f0;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    transition: transform 0.4s ease;
+}
+
+.banner-raccolta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.2);
+}
+
+.banner-bg {
+    position: absolute; top:0; left:0; width:100%; height:100%; z-index: 1;
+}
+
+.banner-bg img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
+.banner-raccolta:hover .banner-bg img { transform: scale(1.05); }
+
+/* Nuovi elementi per i tag all'interno del banner */
+.banner-tags {
+    position: absolute;
+    top: 20px; left: 20px;
+    z-index: 4; display: flex; gap: 10px;
+}
+
+.banner-prezzo {
+    position: absolute;
+    top: 20px; right: 20px;
+    z-index: 4;
+    background: #1a1a1a; color: #f8f6f0;
+    padding: 5px 12px; font-size: 0.85rem; font-weight: 600; letter-spacing: 1px;
+}
+
+.banner-tag-light {
+    background: rgba(248, 246, 240, 0.95); color: #1a1a1a;
+    padding: 5px 12px; font-size: 0.75rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.banner-tag-accent {
+    background: rgba(0, 0, 0, 0.7); border: 1px solid rgba(248, 246, 240, 0.5); color: #f8f6f0;
+    padding: 5px 12px; font-size: 0.75rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+}
+
+.banner-raccolta .banner-contenuto {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Testo allineato a destra */
+    justify-content: center;
+    height: 100%;
+    text-align: right;
+    padding: 0 40px;
+}
+
+.banner-raccolta h3 {
+    font-weight: 300; font-size: 2.2rem; letter-spacing: 6px; text-transform: uppercase; margin-bottom: 10px;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); 
+}
+
+.banner-raccolta p {
+    font-size: 0.9rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 25px; opacity: 0.9;
+}
+
+.banner-azioni {
+    display: flex;
+    gap: 15px;
+}
+
+.banner-btn {
+    background: rgba(248, 246, 240, 0.1);
+    color: #f8f6f0;
+    border: 1px solid rgba(248, 246, 240, 0.5);
+    padding: 12px 25px;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.banner-btn i {
+    margin-right: 6px;
+}
+
+.banner-btn:hover {
+    background: #f8f6f0;
+    color: #1a1a1a;
+}
+
+@media (max-width: 850px) {
+    .banner-raccolta .banner-contenuto {
+        align-items: center; /* Su mobile torna al centro */
+        text-align: center;
+        padding: 0 20px;
+    }
+    .banner-azioni {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+/* Griglia Singoli */
 .griglia-spartiti {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 50px;
-    margin-top: 40px;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); /* Ridotto da 350px per miniature più piccole */
+    gap: 40px;
 }
 
 .spartito-card {
     background: rgba(0, 0, 0, 0.015);
     border: 1px solid rgba(0, 0, 0, 0.04);
-    padding: 20px;
+    padding: 15px; /* Leggermente ridotto */
     border-radius: 4px;
     transition: all 0.5s ease;
     text-align: left;
@@ -660,7 +800,7 @@ body {
 
 .spartito-card:hover {
     background: rgba(0, 0, 0, 0.03);
-    transform: translateY(-10px);
+    transform: translateY(-8px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
 }
 
@@ -669,7 +809,7 @@ body {
     width: 100%;
     aspect-ratio: 3/4;
     overflow: hidden;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
@@ -686,66 +826,68 @@ body {
 
 .tag-prezzo {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 12px;
+    right: 12px;
     background: #1a1a1a;
     color: #f8f6f0;
-    padding: 5px 12px;
-    font-size: 0.8rem;
+    padding: 5px 10px;
+    font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 1px;
 }
 
+.tag-formato {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(248, 246, 240, 0.95);
+    color: #1a1a1a;
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
 .spartito-info h3 {
     font-weight: 400;
-    font-size: 1.2rem;
-    margin-bottom: 12px;
-    letter-spacing: 3px;
+    font-size: 1.1rem; /* Ridotto leggermente */
+    margin-bottom: 10px;
+    letter-spacing: 2px;
     text-transform: uppercase;
 }
 
 .spartito-info p {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     opacity: 0.8;
-    margin-bottom: 25px;
-    height: 50px;
+    margin-bottom: 20px;
+    height: 40px;
     overflow: hidden;
 }
 
 .spartito-azioni {
     display: flex;
-    gap: 15px;
+    width: 100%; /* Pulsante singolo a larghezza intera */
 }
 
 .btn-compra {
     flex: 1;
     text-align: center;
-    padding: 12px 5px;
+    padding: 12px 10px;
     text-decoration: none;
     font-size: 0.75rem;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     text-transform: uppercase;
     transition: all 0.3s ease;
     border: 1px solid rgba(26, 26, 26, 0.2);
     color: #1a1a1a;
-}
-
-.btn-compra.digital {
     background: rgba(0, 0, 0, 0.03);
 }
 
-.btn-compra.digital:hover {
+.btn-compra:hover {
     background: #1a1a1a;
     color: #f8f6f0;
-}
-
-.btn-compra.physical:hover {
-    border-color: #1a1a1a;
-    background: transparent;
-}
-
-.btn-compra i {
-    margin-right: 8px;
 }
 
 /* ==========================================
@@ -781,7 +923,7 @@ body {
 }
 
 .brano-container {
-    position: relative; /* Aggiunto per ancorare la linea separatrice */
+    position: relative; 
     max-width: 1000px;
     margin: 0 auto 100px auto;
     padding: 0 40px;
@@ -795,12 +937,12 @@ body {
 .brano-container:not(:last-child)::after {
     content: '';
     position: absolute;
-    bottom: -50px; /* Centrata perfettamente nello spazio vuoto di 100px */
+    bottom: -50px; 
     left: 50%;
     transform: translateX(-50%);
-    width: calc(100% - 80px); /* Allineata al testo, ignorando i 40px di padding per lato */
+    width: calc(100% - 80px); 
     height: 1px;
-    background: rgba(0, 0, 0, 0.08); /* Colore molto delicato e non intrusivo */
+    background: rgba(0, 0, 0, 0.08); 
 }
 
 .brano-container.invertito {
