@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mauro Spanò | Contact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/stile.css">
+</head>
+<body>
+
+    <header class="menu-principale">
+        <div class="logo"><a href="home.html">MAURO SPANÒ</a></div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="bio.html">Bio</a></li> 
+                <li><a href="works.html">Works</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="contatti.html" class="attivo">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenuto-pagine">
+        <div class="layout-contatti">
+            
+            <div class="info-dirette">
+                <h2>Contact</h2>
+                <p class="Sottotitolo-contatti">For booking, editorial collaborations, information, or just to say hi.</p>
+                
+                <div class="canali-contatto">
+                    <div class="contatto-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@maurospano.com">info@maurospano.com</a>
+                    </div>
+                    <div class="contatto-item">
+                        <i class="fas fa-globe"></i>
+                        <span>maurospano.com</span>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.instagram.com/pianistoide/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@maurospanocomposer" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://open.spotify.com/intl-it/artist/2UQDedllt1dRTMkURL95TU" target="_blank" title="Spotify"><i class="fab fa-spotify"></i></a>
+                </div>
+
+                <hr class="linea-separatrice">
+
+                <form action="https://formsubmit.co/maurospano95@gmail.com" method="POST" class="form-messaggio">
+                    <input type="text" name="_honey" style="display:none">
+                    <input type="hidden" name="_captcha" value="false">
+                    
+                    <input type="hidden" name="_next" value="https://maurospano.github.io/sito_maurospano/en/grazie.html">
+
+                    <input type="text" name="Name" placeholder="Your name" required class="input-field">
+                    <input type="email" name="Email" placeholder="Your email" required class="input-field">
+                    <input type="text" name="_subject" placeholder="Message subject" class="input-field">
+                    <textarea name="Message" placeholder="Write your message here..." required class="input-textarea"></textarea>
+                    
+                    <button type="submit" class="btn-invia">Send Message</button>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>

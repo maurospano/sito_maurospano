@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mauro Spanò | Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/stile.css">
+</head>
+<body>
+
+    <header class="menu-principale">
+        <div class="logo"><a href="home.html">MAURO SPANÒ</a></div>
+        <nav>
+            <ul>
+                <li><a href="home.html" class="attivo">Home</a></li>
+                <li><a href="bio.html">Bio</a></li>
+                <li><a href="works.html">Works</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="contatti.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero-home">
+        <div class="hero-bg-media">
+            <video autoplay loop muted playsinline poster="../immagini/home/hero-fallback.jpg">
+                <source src="../immagini/home/hero-animato.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <div class="hero-home-testo">
+            <h1>MAURO SPANÒ</h1>
+            <p>Pianist & Composer</p>
+        </div>
+    </section>
+
+    <main class="contenuto-pagine main-home">
+        
+        <section class="sezione-novita scroll-reveal">
+            <div class="novita-copertina">
+                <img src="../immagini/todays_office/sheet_upcoming.jpg" alt="Upcoming Release">
+            </div>
+            <div class="novita-testo">
+                <span class="badge-novita">Upcoming Release</span>
+                <h2>HOLLOW</h2>
+                <p><em>Out on November 27, 2026</em></p>
+                <div class="novita-azioni">
+                    <a href="todays_office.html" class="btn-scopri">Discover the project</a>
+                </div>
+            </div>
+        </section>
+
+        <!--
+        <section class="sezione-novita scroll-reveal">
+            <div class="novita-copertina">
+                <img src="../immagini/todays_office/Artwork - Web - Hollow.jpg" alt="Latest Release">
+            </div>
+            <div class="novita-testo">
+                <span class="badge-novita">Latest Release</span>
+                <h2>HOLLOW</h2>
+                <p>The Void. A concept as fascinating as it is difficult to visualize. How is it possible to describe something that, in fact, isn't there? How to translate the perception of an absence into music? Hollow explores the sensation of existential emptiness that belongs to every human being, and which perhaps represents the true engine of change. On the other hand, the beauty of an emptied vase is that the simplicity lies in filling it.</p>
+                <div class="novita-azioni">
+                    <a href="todays_office.html" class="btn-scopri">Discover the project</a>
+                </div>
+            </div>
+        </section>
+        -->
+
+        <!-- SEZIONE VIDEO -->
+        <!-- <section class="sezione-video-home scroll-reveal">
+            <h3>Video</h3>
+            <div class="video-container">
+               <iframe src="https://www.youtube.com/embed/Apg9X3yu4I8?si=amS_ujyCJ8p02bYg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </section> -->
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const revealElements = document.querySelectorAll('.scroll-reveal');
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visibile');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.15 
+            });
+            revealElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
