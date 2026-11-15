@@ -1,4 +1,17 @@
 /* ==========================================
+   GIUSTIFICAZIONE GLOBALE TESTI (Sillabazione)
+   ========================================== */
+.novita-testo p,
+.album-desc,
+.intro-progetto p,
+.brano-testo p,
+.accordion-cv .details-content {
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+/* ==========================================
    1. RESET E IMPOSTAZIONI GLOBALI
    ========================================== */
 * {
@@ -1175,4 +1188,17 @@ body {
 .btn-espandi i {
     margin-left: 8px;
     transition: transform 0.4s ease;
+}
+
+/* ==========================================
+   GIUSTIFICAZIONE GLOBALE TESTI (Sillabazione)
+   ========================================== */
+.novita-testo p,
+.album-desc,
+.intro-progetto p,
+.brano-testo p,
+.accordion-cv .details-content {
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
 }
