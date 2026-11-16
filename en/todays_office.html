@@ -29,9 +29,17 @@
         <!-- 1) IMMAGINE HERO GRANDE CON VIDEO BACKGROUND -->
         <section class="hero-todays-office">
             <div class="hero-bg-media">
-                <video autoplay loop muted playsinline poster="../immagini/todays_office/todays_office_intestazione.png">
+                
+                <!-- Video per PC (Orizzontale) -->
+                <video class="video-desktop" autoplay loop muted playsinline poster="../immagini/todays_office/todays_office_intestazione.png">
                     <source src="../immagini/todays_office/todays_office_animato.mp4" type="video/mp4">
                 </video>
+
+                <!-- Video per Smartphone (Verticale) -->
+                <video class="video-mobile" autoplay loop muted playsinline poster="../immagini/todays_office/todays_office_intestazione_mobile.png">
+                    <source src="../immagini/todays_office/todays_office_animato_mobile.mp4" type="video/mp4">
+                </video>
+                
                 <div class="hero-overlay"></div>
             </div>
         </section>

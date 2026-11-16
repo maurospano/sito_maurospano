@@ -316,6 +316,26 @@ body {
     z-index: 0;
 }
 
+/* =========================================
+   REGOLE ESCLUSIVE PER MOBILE (Smartphone)
+   ========================================= */
+@media (max-width: 768px) {
+    
+    /* Le tue altre regole per i testi e i margini... */
+
+    /* Inverte i video: nasconde quello orizzontale e mostra quello verticale */
+    .video-desktop {
+        display: none !important;
+    }
+
+    .video-mobile {
+        display: block !important;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
 .hero-bg-media video,
 .hero-bg-media img {
     width: 100%;
@@ -1201,4 +1221,53 @@ body {
     text-align: justify;
     hyphens: auto;
     -webkit-hyphens: auto;
+}
+
+/* =========================================
+   REGOLE ESCLUSIVE PER MOBILE (Smartphone)
+   ========================================= */
+@media (max-width: 768px) {
+    
+    /* 1. RISOLUZIONE DELLO SCROLL E MENU */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    .menu-principale {
+        flex-direction: column;
+        padding: 15px 10px;
+        gap: 15px;
+    }
+
+    .menu-principale nav ul {
+        flex-wrap: wrap; 
+        justify-content: center;
+        gap: 10px 20px;
+        padding: 0;
+    }
+
+    .menu-principale nav ul li a {
+        font-size: 0.9rem;
+    }
+    
+    /* 2. RISOLUZIONE DEI TESTI (No giustificato) */
+    .testo-interno p, 
+    .brano-testo p,
+    .intro-progetto p {
+        text-align: left !important;
+        hyphens: none !important;
+    }
+
+    /* 3. SCAMBIO VIDEO (Nasconde orizzontale, mostra verticale) */
+    .video-desktop {
+        display: none !important;
+    }
+
+    .video-mobile {
+        display: block !important;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
