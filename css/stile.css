@@ -316,6 +316,77 @@ body {
     z-index: 0;
 }
 
+/* Abilita lo scroll fluido in tutto il sito senza usare JS */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Posizionamento Social nel banner */
+.hero-social-links {
+    position: absolute;
+    bottom: 40px;
+    left: 10%; /* Allineato col padding laterale del menu */
+    z-index: 3;
+    display: flex;
+    gap: 20px;
+}
+
+.hero-social-links a {
+    color: #f8f6f0;
+    font-size: 1.5rem;
+    opacity: 0.6;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.hero-social-links a:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+/* Posizionamento Freccia animata */
+.scroll-arrow {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    color: #f8f6f0;
+    font-size: 1.8rem;
+    opacity: 0.7;
+    text-decoration: none;
+    animation: pulseArrow 2.5s infinite ease-in-out;
+}
+
+.scroll-arrow:hover {
+    color: #f8f6f0;
+}
+
+@keyframes pulseArrow {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateX(-50%) translateY(10px);
+        opacity: 1;
+    }
+}
+
+/* Adattamenti per mobile */
+@media (max-width: 850px) {
+    .hero-social-links {
+        left: 20px;
+        bottom: 25px;
+    }
+    .hero-social-links a {
+        font-size: 1.3rem;
+    }
+    .scroll-arrow {
+        bottom: 25px;
+        font-size: 1.5rem;
+    }
+}
+
 /* =========================================
    REGOLE ESCLUSIVE PER MOBILE (Smartphone)
    ========================================= */
