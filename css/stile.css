@@ -1228,30 +1228,54 @@ body {
    ========================================= */
 @media (max-width: 768px) {
     
-    /* 1. RISOLUZIONE DELLO SCROLL E MENU */
+    /* 1. RISOLUZIONE DELLO SCROLL */
     html, body {
         overflow-x: hidden;
         width: 100%;
     }
 
+    /* 2. MENU AD HAMBURGER A SCOMPARSA */
     .menu-principale {
         flex-direction: column;
-        padding: 15px 10px;
-        gap: 15px;
+        padding: 10px;
     }
 
+    /* Mostra l'icona dell'hamburger */
+    .menu-toggle-label {
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+        text-align: center;
+        margin-top: 5px;
+    }
+
+    /* Nasconde la casella di spunta */
+    .menu-toggle-checkbox {
+        display: none;
+    }
+
+    /* Nasconde la lista dei link di default e la impagina in verticale */
     .menu-principale nav ul {
-        flex-wrap: wrap; 
-        justify-content: center;
-        gap: 10px 20px;
-        padding: 0;
+        display: none; 
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 20px; /* Spazio comodo per le dita */
+        padding-top: 20px;
+        padding-bottom: 10px;
     }
 
+    /* LA MAGIA: Mostra la tendina quando l'icona viene toccata */
+    .menu-toggle-checkbox:checked ~ ul {
+        display: flex;
+    }
+
+    /* Ingrandisce un po' le scritte del menu per facilitare il tocco */
     .menu-principale nav ul li a {
-        font-size: 0.9rem;
+        font-size: 1.1rem;
     }
     
-    /* 2. RISOLUZIONE DEI TESTI (No giustificato) */
+    /* 3. RISOLUZIONE DEI TESTI (No giustificato) */
     .testo-interno p, 
     .brano-testo p,
     .intro-progetto p {
@@ -1259,7 +1283,7 @@ body {
         hyphens: none !important;
     }
 
-    /* 3. SCAMBIO VIDEO (Nasconde orizzontale, mostra verticale) */
+    /* 4. SCAMBIO VIDEO (Nasconde orizzontale, mostra verticale) */
     .video-desktop {
         display: none !important;
     }
