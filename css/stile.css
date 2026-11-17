@@ -1273,6 +1273,14 @@ body {
         margin: 0; /* Azzera i margini predefiniti */
     }
 
+    /* Azzera i margini laterali ereditati dal computer fisso e forza il centro */
+    .menu-principale nav ul li {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100%;
+        text-align: center;
+    }
+
     /* LA MAGIA: Mostra la tendina quando l'icona viene toccata */
     .menu-toggle-checkbox:checked ~ ul {
         display: flex;
