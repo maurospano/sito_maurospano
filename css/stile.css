@@ -1223,6 +1223,12 @@ body {
     -webkit-hyphens: auto;
 }
 
+/* Nasconde l'interruttore e l'icona del menu su PC */
+.menu-toggle-checkbox, 
+.menu-toggle-label {
+    display: none;
+}
+
 /* =========================================
    REGOLE ESCLUSIVE PER MOBILE (Smartphone)
    ========================================= */
