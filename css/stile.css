@@ -349,7 +349,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); 
+    background: rgba(0, 0, 0, 0.2); 
     z-index: 1;
 }
 
@@ -1260,9 +1260,11 @@ body {
         flex-direction: column;
         align-items: center;
         width: 100%;
-        gap: 20px; /* Spazio comodo per le dita */
+        gap: 20px; 
         padding-top: 20px;
         padding-bottom: 10px;
+        padding-left: 0; /* Rimuove lo spazio vuoto a sinistra */
+        margin: 0; /* Azzera i margini predefiniti */
     }
 
     /* LA MAGIA: Mostra la tendina quando l'icona viene toccata */
