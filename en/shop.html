@@ -15,21 +15,22 @@
     <header class="menu-principale">
         <div class="logo"><a href="../index.html">MAURO SPANÒ (ENG)</a></div>
         <nav>
-            <!-- 1. Checkbox invisibile che funge da "interruttore" -->
-    <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
-    
-    <!-- 2. L'icona "Hamburger" che l'utente toccherà -->
-    <label for="menu-toggle" class="menu-toggle-label">&#9776;</label>
+            <!-- 1. Invisible checkbox acting as a toggle -->
+            <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
+            
+            <!-- 2. Hamburger icon for mobile -->
+            <label for="menu-toggle" class="menu-toggle-label">&#9776;</label>
             <ul>
                 <li><a href="home.html">Home</a></li>
                 <li><a href="bio.html">Bio</a></li>
                 <li><a href="works.html">Works</a></li>
                 <li><a href="shop.html" class="attivo">Shop</a></li>
-                <li><a href="contatti.html">Contact</a></li>
+                <li><a href="contatti.html">Contacts</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- BANNER HERO SHOP -->
     <section class="hero-shop">
         <div class="hero-bg-media">
             <video autoplay loop muted playsinline poster="../immagini/shop/shop-hero.jpg">
@@ -44,25 +45,78 @@
 
     <main class="contenuto-pagine" style="margin-top: 40px;">
         
+        <!-- DESCRIPTION -->
         <div class="intro-progetto">
             <p>
-                One of the things I love most about writing music is hearing it played by hands other than my own. On this page, sheet music in PDF format for all my productions is available for download.
+                One of the things I love most about writing music is hearing it played by hands other than my own. On this page, PDF sheet music for all of my productions is available for download.
             </p>
             <p>
-                For those who wish, the collections often also include self-produced physical paper editions. In case direct sale is temporarily unavailable on the site, please write to me at <strong>info@maurospano.com</strong> to arrange shipping.
+                For those who wish, my collections often include self-produced physical printed editions as well. If direct purchase is temporarily unavailable on the website, please write to me at <strong>info@maurospano.com</strong> to arrange shipping.
             </p>
             <p>
-                You can also send your performances of my pieces to the same email: if you feel like reading and recording them, listening to you will be a huge honor and pleasure for me.
+                You can also send me recordings of your performances of my pieces at the same email address: if you feel like reading and recording them, listening to you will be a great honor and pleasure for me.
             </p>
         </div>
 
+        <!-- COLLECTIONS SECTION -->
+        <h2 class="titolo-sezione-shop">Collections</h2>
+        
+        <div class="banner-raccolta">
+            <div class="banner-bg">
+                <img src="../immagini/shop/sentiero_raccolta.jpg" alt="Sentiero Complete Sheet Music">
+                <div class="hero-overlay"></div>
+            </div>
+            
+            <div class="banner-tags">
+                <span class="banner-tag-light">Download</span>
+            </div>
+            
+            <div class="banner-prezzo">FREE</div>
+
+            <div class="banner-contenuto">
+                <h3>Sentiero</h3>
+                <p>Free Lead Sheet Music</p>
+                <div class="banner-azioni">
+                    <a href="../download/sentiero_lead_sheets.zip" download class="banner-btn"><i class="fas fa-download"></i> Download Digital Score</a>
+                </div>
+            </div>
+        </div>
+
+        <!--
+        <div class="banner-raccolta">
+            <div class="banner-bg">
+                <img src="../immagini/shop/todays_office_raccolta.jpg" alt="Today's Office Complete Sheet Music">
+                <div class="hero-overlay"></div>
+            </div>
+            
+            <div class="banner-tags">
+                <span class="banner-tag-light">Download</span>
+            </div>
+            
+            <div class="banner-prezzo">€ 14.99</div>
+
+            <div class="banner-contenuto">
+                <h3>Today's Office</h3>
+                <p>Complete Piano Sheet Music Book</p>
+                <div class="banner-azioni">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="banner-btn"><i class="fas fa-file-pdf"></i> Buy Digital Score</a>
+                </div>
+            </div>
+        </div>
+        -->
+
+        <!-- SINGLE SCORES SECTION -->
         <h2 class="titolo-sezione-shop">Single Scores</h2>
         
         <div class="griglia-spartiti">
             
+            <!-- ==========================================
+                 TRACK 1: HOLLOW (Release: Nov 27, 2026)
+            =========================================== -->
+            <!-- PLACEHOLDER VERSION -->
             <div class="spartito-card" style="opacity: 0.7;">
                 <div class="spartito-anteprima">
-                    <img src="../immagini/shop/sheet_upcoming.jpg" alt="Track 1 coming soon">
+                    <img src="../immagini/shop/sheet_upcoming.jpg" alt="Track 1 upcoming">
                 </div>
                 <div class="spartito-info">
                     <h3>Track 01</h3>
@@ -70,7 +124,7 @@
                 </div>
             </div>
 
-            <!-- 
+            <!-- REAL VERSION
             <div class="spartito-card">
                 <div class="spartito-anteprima">
                     <div class="tag-formato">Download</div>
@@ -87,9 +141,13 @@
             </div>
             -->
 
+            <!-- ==========================================
+                 TRACK 2: ROUND GLASSES (Release: Dec 4, 2026)
+            =========================================== -->
+            <!-- PLACEHOLDER VERSION -->
             <div class="spartito-card" style="opacity: 0.7;">
                 <div class="spartito-anteprima">
-                    <img src="../immagini/shop/sheet_upcoming.jpg" alt="Track 2 coming soon">
+                    <img src="../immagini/shop/sheet_upcoming.jpg" alt="Track 2 upcoming">
                 </div>
                 <div class="spartito-info">
                     <h3>Track 02</h3>
@@ -97,9 +155,30 @@
                 </div>
             </div>
 
+            <!-- REAL VERSION
+            <div class="spartito-card">
+                <div class="spartito-anteprima">
+                    <div class="tag-formato">Download</div>
+                    <div class="tag-prezzo">€ 3.99</div>
+                    <img src="../immagini/shop/round_glasses_shop.jpg" alt="Round Glasses Sheet Music">
+                </div>
+                <div class="spartito-info">
+                    <h3>Round Glasses</h3>
+                    <p>Original Piano Score - PDF</p>
+                    <div class="spartito-azioni">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-compra">Buy Round Glasses</a>
+                    </div>
+                </div>
+            </div>
+            -->
+
+            <!-- ==========================================
+                 TRACK 3: COLLISION (Release: Dec 11, 2026)
+            =========================================== -->
+            <!-- PLACEHOLDER VERSION -->
             <div class="spartito-card" style="opacity: 0.7;">
                 <div class="spartito-anteprima">
-                    <img src="../immagini/shop/sheet_upcoming.jpg" alt="Track 3 coming soon">
+                    <img src="../immagini/shop/sheet_upcoming.jpg" alt="Track 3 upcoming">
                 </div>
                 <div class="spartito-info">
                     <h3>Track 03</h3>
@@ -107,9 +186,30 @@
                 </div>
             </div>
 
+            <!-- REAL VERSION
+            <div class="spartito-card">
+                <div class="spartito-anteprima">
+                    <div class="tag-formato">Download</div>
+                    <div class="tag-prezzo">€ 3.99</div>
+                    <img src="../immagini/shop/collision_shop.jpg" alt="Collision Sheet Music">
+                </div>
+                <div class="spartito-info">
+                    <h3>Collision</h3>
+                    <p>Original Piano Score - PDF</p>
+                    <div class="spartito-azioni">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-compra">Buy Collision</a>
+                    </div>
+                </div>
+            </div>
+            -->
+
+            <!-- ==========================================
+                 TRACK 4: THE AMAZING MUSHROOM (Release: Dec 18, 2026)
+            =========================================== -->
+            <!-- PLACEHOLDER VERSION -->
             <div class="spartito-card" style="opacity: 0.7;">
                 <div class="spartito-anteprima">
-                    <img src="../immagini/shop/sheet_upcoming.jpg" alt="Track 4 coming soon">
+                    <img src="../immagini/shop/sheet_upcoming.jpg" alt="Track 4 upcoming">
                 </div>
                 <div class="spartito-info">
                     <h3>Track 04</h3>
@@ -117,9 +217,30 @@
                 </div>
             </div>
 
+            <!-- REAL VERSION
+            <div class="spartito-card">
+                <div class="spartito-anteprima">
+                    <div class="tag-formato">Download</div>
+                    <div class="tag-prezzo">€ 3.99</div>
+                    <img src="../immagini/shop/the_amazing_mushroom_shop.jpg" alt="The Amazing Mushroom Sheet Music">
+                </div>
+                <div class="spartito-info">
+                    <h3 style="font-size: 0.95rem;">The Amazing Mushroom</h3>
+                    <p>Original Piano Score - PDF</p>
+                    <div class="spartito-azioni">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-compra">Buy The Amazing Mushroom</a>
+                    </div>
+                </div>
+            </div>
+            -->
+
+            <!-- ==========================================
+                 TRACK 5: LIMONCELLO WALTZ (Release: Jan 8, 2027)
+            =========================================== -->
+            <!-- PLACEHOLDER VERSION -->
             <div class="spartito-card" style="opacity: 0.7;">
                 <div class="spartito-anteprima">
-                    <img src="../immagini/shop/sheet_upcoming.jpg" alt="Track 5 coming soon">
+                    <img src="../immagini/shop/sheet_upcoming.jpg" alt="Track 5 upcoming">
                 </div>
                 <div class="spartito-info">
                     <h3>Track 05</h3>
@@ -127,9 +248,30 @@
                 </div>
             </div>
 
+            <!-- REAL VERSION
+            <div class="spartito-card">
+                <div class="spartito-anteprima">
+                    <div class="tag-formato">Download</div>
+                    <div class="tag-prezzo">€ 3.99</div>
+                    <img src="../immagini/shop/limoncello_waltz_shop.jpg" alt="Limoncello Waltz Sheet Music">
+                </div>
+                <div class="spartito-info">
+                    <h3>Limoncello Waltz</h3>
+                    <p>Original Piano Score - PDF</p>
+                    <div class="spartito-azioni">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-compra">Buy Limoncello Waltz</a>
+                    </div>
+                </div>
+            </div>
+            -->
+
+            <!-- ==========================================
+                 TRACK 6: CHILD OF THE SEA (Release: Jan 15, 2027)
+            =========================================== -->
+            <!-- PLACEHOLDER VERSION -->
             <div class="spartito-card" style="opacity: 0.7;">
                 <div class="spartito-anteprima">
-                    <img src="../immagini/shop/sheet_upcoming.jpg" alt="Track 6 coming soon">
+                    <img src="../immagini/shop/sheet_upcoming.jpg" alt="Track 6 upcoming">
                 </div>
                 <div class="spartito-info">
                     <h3>Track 06</h3>
@@ -137,15 +279,53 @@
                 </div>
             </div>
 
+            <!-- REAL VERSION
+            <div class="spartito-card">
+                <div class="spartito-anteprima">
+                    <div class="tag-formato">Download</div>
+                    <div class="tag-prezzo">€ 3.99</div>
+                    <img src="../immagini/shop/child_of_the_sea_shop.jpg" alt="Child of the Sea Sheet Music">
+                </div>
+                <div class="spartito-info">
+                    <h3>Child of the Sea</h3>
+                    <p>Original Piano Score - PDF</p>
+                    <div class="spartito-azioni">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-compra">Buy Child of the Sea</a>
+                    </div>
+                </div>
+            </div>
+            -->
+
+            <!-- ==========================================
+                 TRACK 7: OCULUS (Release: Jan 22, 2027)
+            =========================================== -->
+            <!-- PLACEHOLDER VERSION -->
             <div class="spartito-card" style="opacity: 0.7;">
                 <div class="spartito-anteprima">
-                    <img src="../immagini/shop/sheet_upcoming.jpg" alt="Track 7 coming soon">
+                    <img src="../immagini/shop/sheet_upcoming.jpg" alt="Track 7 upcoming">
                 </div>
                 <div class="spartito-info">
                     <h3>Track 07</h3>
                     <p><em>Out on January 22, 2027</em></p>
                 </div>
             </div>
+
+            <!-- REAL VERSION
+            <div class="spartito-card">
+                <div class="spartito-anteprima">
+                    <div class="tag-formato">Download</div>
+                    <div class="tag-prezzo">€ 3.99</div>
+                    <img src="../immagini/shop/oculus_shop.jpg" alt="Oculus Sheet Music">
+                </div>
+                <div class="spartito-info">
+                    <h3>Oculus</h3>
+                    <p>Original Piano Score - PDF</p>
+                    <div class="spartito-azioni">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-compra">Buy Oculus</a>
+                    </div>
+                </div>
+            </div>
+            -->
 
         </div>
     </main>
