@@ -1237,7 +1237,7 @@ html {
 }
 
 .contenitore-testo-sfumato.aperto {
-    max-height: 1500px; /* Altezza sufficiente per contenere tutto */
+    max-height: 3500px; /* Altezza sufficiente per contenere tutto */
 }
 
 .sfumatura {
