@@ -878,6 +878,27 @@ html {
     color: #1a1a1a;
 }
 
+/* Variante con testo scuro per banner su sfondo chiaro */
+.banner-raccolta.banner-chiaro {
+    color: #1a1a1a;
+}
+
+.banner-raccolta.banner-chiaro h3 {
+    text-shadow: none; /* Rimuove l'ombra scura che sporcherebbe il testo nero */
+}
+
+.banner-raccolta.banner-chiaro .banner-btn {
+    color: #1a1a1a;
+    border-color: rgba(26, 26, 26, 0.5);
+    background: rgba(248, 246, 240, 0.4);
+}
+
+.banner-raccolta.banner-chiaro .banner-btn:hover {
+    background: #1a1a1a;
+    color: #f8f6f0;
+    border-color: #1a1a1a;
+}
+
 @media (max-width: 850px) {
     .banner-raccolta .banner-contenuto {
         align-items: center; /* Su mobile torna al centro */
@@ -1284,6 +1305,35 @@ html {
 .btn-espandi i {
     margin-left: 8px;
     transition: transform 0.4s ease;
+}
+
+/* Espansione testo in puro CSS (Shop) */
+.espandi-checkbox {
+    display: none;
+}
+
+label.btn-espandi {
+    display: inline-block;
+}
+
+.btn-espandi .testo-chiudi {
+    display: none;
+}
+
+.espandi-checkbox:checked ~ .contenitore-testo-sfumato {
+    max-height: 3500px;
+}
+
+.espandi-checkbox:checked ~ .contenitore-testo-sfumato .sfumatura {
+    opacity: 0;
+}
+
+.espandi-checkbox:checked ~ .contenitore-btn-espandi .testo-apri {
+    display: none;
+}
+
+.espandi-checkbox:checked ~ .contenitore-btn-espandi .testo-chiudi {
+    display: inline;
 }
 
 /* ==========================================

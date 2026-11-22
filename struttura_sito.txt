@@ -2,6 +2,7 @@
 ./CNAME
 ./contatti.html
 ./css/stile.css
+./download/sentiero_lead_sheets.zip
 ./en/bio.html
 ./en/contatti.html
 ./en/grazie.html
@@ -25,6 +26,7 @@
 ./immagini/shop/limoncello_waltz_shop.jpg
 ./immagini/shop/oculus_shop.jpg
 ./immagini/shop/round_glasses_shop.jpg
+./immagini/shop/sentiero_raccolta.jpg
 ./immagini/shop/sheet_upcoming.jpg
 ./immagini/shop/shop-animato.mp4
 ./immagini/shop/shop-hero.jpg
