@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /grazie.html
+Disallow: /en/thanks.html
+
+Sitemap: https://maurospano.com/sitemap.xml

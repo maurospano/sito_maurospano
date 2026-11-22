@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- PAGINE IN ITALIANO -->
+  <url>
+    <loc>https://maurospano.com/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://maurospano.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://maurospano.com/en/home.html" />
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://maurospano.com/home.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://maurospano.com/home.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://maurospano.com/en/home.html" />
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://maurospano.com/bio.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://maurospano.com/bio.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://maurospano.com/en/bio.html" />
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://maurospano.com/works.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://maurospano.com/works.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://maurospano.com/en/works.html" />
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://maurospano.com/todays_office.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://maurospano.com/todays_office.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://maurospano.com/en/todays_office.html" />
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://maurospano.com/shop.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://maurospano.com/shop.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://maurospano.com/en/shop.html" />
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://maurospano.com/contatti.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://maurospano.com/contatti.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://maurospano.com/en/contatti.html" />
+    <priority>0.7</priority>
+  </url>
+
+  <!-- PAGINE IN INGLESE -->
+  <url>
+    <loc>https://maurospano.com/en/home.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://maurospano.com/en/home.html" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://maurospano.com/home.html" />
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://maurospano.com/en/bio.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://maurospano.com/en/bio.html" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://maurospano.com/bio.html" />
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://maurospano.com/en/works.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://maurospano.com/en/works.html" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://maurospano.com/works.html" />
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://maurospano.com/en/todays_office.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://maurospano.com/en/todays_office.html" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://maurospano.com/todays_office.html" />
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://maurospano.com/en/shop.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://maurospano.com/en/shop.html" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://maurospano.com/shop.html" />
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://maurospano.com/en/contatti.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://maurospano.com/en/contatti.html" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://maurospano.com/contatti.html" />
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
