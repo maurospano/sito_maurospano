@@ -58,7 +58,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    min-height: 100dvh;
     overflow: hidden;
 }
 
@@ -439,7 +440,8 @@ body {
 }
 
 .main-home {
-    margin-top: 80px; 
+    margin-top: 80px;
+    scroll-margin-top: 100px;
 }
 
 /* ==========================================
@@ -702,6 +704,9 @@ body {
         width: 250px;
         height: 250px;
     }
+    .album-links {
+        justify-content: center;
+    }
 }
 
 /* ==========================================
@@ -958,8 +963,7 @@ body {
     font-size: 0.85rem;
     opacity: 0.8;
     margin-bottom: 20px;
-    height: 40px;
-    overflow: hidden;
+    min-height: 40px;
 }
 
 .spartito-azioni {
