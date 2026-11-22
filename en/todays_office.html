@@ -49,9 +49,10 @@
             </div>
         </section>
 
-        <!-- 2) INTRODUZIONE ALBUM -->
+<!-- 2) INTRODUZIONE ALBUM -->
         <section class="intro-progetto">
-            <div class="contenitore-testo-sfumato" id="introContainer">
+            <input type="checkbox" id="toggle-office-intro" class="espandi-checkbox">
+            <div class="contenitore-testo-sfumato">
                 <div class="testo-interno">
                     <p>
                         "Today's Office" represents an important turning point for me. It is a collection of seven tracks for solo piano, composed over a span of about three years. A period of profound change, during which music was momentarily set aside to reorganize various aspects of my life. I changed jobs, transitioning from a freelance musician to a public administration official, facing all the doubts and fears that would assail any artist confronted with such a choice.
@@ -68,12 +69,15 @@
                     <p style="text-align: right; font-style: italic; margin-top: 20px;">
                         Mauro Spanò
                     </p>
-                </div>
-                <div class="sfumatura" id="introSfumatura"></div>
+</div>
+                <div class="sfumatura"></div>
             </div>
             
             <div class="contenitore-btn-espandi">
-                <button class="btn-espandi" id="btnEspandiIntro">Continue reading <i class="fas fa-chevron-down"></i></button>
+                <label for="toggle-office-intro" class="btn-espandi">
+                    <span class="testo-apri">Read more <i class="fas fa-chevron-down"></i></span>
+                    <span class="testo-chiudi">Show less <i class="fas fa-chevron-up"></i></span>
+                </label>
             </div>
         </section>
 
@@ -310,25 +314,5 @@
         </section>
     </main>
 
-
-    <!-- SCRIPT PER TESTO ESPANDIBILE -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const btnEspandi = document.getElementById('btnEspandiIntro');
-            const containerIntro = document.getElementById('introContainer');
-
-            if (btnEspandi && containerIntro) {
-                btnEspandi.addEventListener('click', () => {
-                    containerIntro.classList.toggle('aperto');
-                    
-                    if (containerIntro.classList.contains('aperto')) {
-                        btnEspandi.innerHTML = 'Read less <i class="fas fa-chevron-up"></i>';
-                    } else {
-                        btnEspandi.innerHTML = 'Continue reading <i class="fas fa-chevron-down"></i>';
-                    }
-                });
-            }
-        });
-    </script>
 </body>
 </html>

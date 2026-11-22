@@ -20,10 +20,13 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 @keyframes fadeInPagina {
     from {
         opacity: 0;
-        /* filter: blur rimosso perché causa dithering (grana) e bug su Safari/Mac */
     }
     to {
         opacity: 1;
@@ -40,7 +43,6 @@ body {
     color: #1a1a1a;
     animation: fadeInPagina 1.2s ease-out forwards; 
     text-align: left;
-    text-justify: inter-character;
 }
 
 .contenuto-pagine {
@@ -82,26 +84,6 @@ body {
     margin-bottom: 25px;
     color: #4a4a4a;
     text-transform: uppercase;
-}
-
-.bottone-entra {
-    display: inline-block;
-    padding: 14px 45px;
-    border: 1px solid rgba(26, 26, 26, 0.3); 
-    color: #1a1a1a;
-    text-decoration: none;
-    font-size: 0.85rem;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-    background: transparent;
-}
-
-.bottone-entra:hover {
-    background-color: #1a1a1a;
-    color: #f8f6f0; 
-    letter-spacing: 5px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .scelta-lingua-nuda {
@@ -181,6 +163,12 @@ body {
 .menu-principale a:hover, 
 .menu-principale a.attivo {
     opacity: 1;
+}
+
+/* Nasconde l'interruttore e l'icona del menu su PC */
+.menu-toggle-checkbox, 
+.menu-toggle-label {
+    display: none;
 }
 
 /* ==========================================
@@ -321,95 +309,9 @@ body {
     z-index: 0;
 }
 
-/* Abilita lo scroll fluido in tutto il sito senza usare JS */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Posizionamento Social nel banner */
-.hero-social-links {
-    position: absolute;
-    bottom: 40px;
-    left: 10%; /* Allineato col padding laterale del menu */
-    z-index: 3;
-    display: flex;
-    gap: 20px;
-}
-
-.hero-social-links a {
-    color: #f8f6f0;
-    font-size: 1.5rem;
-    opacity: 0.6;
-    transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-.hero-social-links a:hover {
-    opacity: 1;
-    transform: translateY(-3px);
-}
-
-/* Posizionamento Freccia animata */
-.scroll-arrow {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 3;
-    color: #f8f6f0;
-    font-size: 1.8rem;
-    opacity: 0.7;
-    text-decoration: none;
-    animation: pulseArrow 2.5s infinite ease-in-out;
-}
-
-.scroll-arrow:hover {
-    color: #f8f6f0;
-}
-
-@keyframes pulseArrow {
-    0%, 100% {
-        transform: translateX(-50%) translateY(0);
-        opacity: 0.5;
-    }
-    50% {
-        transform: translateX(-50%) translateY(10px);
-        opacity: 1;
-    }
-}
-
-/* Adattamenti per mobile */
-@media (max-width: 850px) {
-    .hero-social-links {
-        left: 20px;
-        bottom: 25px;
-    }
-    .hero-social-links a {
-        font-size: 1.3rem;
-    }
-    .scroll-arrow {
-        bottom: 25px;
-        font-size: 1.5rem;
-    }
-}
-
-/* =========================================
-   REGOLE ESCLUSIVE PER MOBILE (Smartphone)
-   ========================================= */
-@media (max-width: 768px) {
-    
-    /* Le tue altre regole per i testi e i margini... */
-
-    /* Inverte i video: nasconde quello orizzontale e mostra quello verticale */
-    .video-desktop {
-        display: none !important;
-    }
-
-    .video-mobile {
-        display: block !important;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+/* Nasconde il video verticale su desktop */
+.video-mobile {
+    display: none;
 }
 
 .hero-bg-media video,
@@ -460,6 +362,57 @@ html {
     text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
+/* Posizionamento Social nel banner */
+.hero-social-links {
+    position: absolute;
+    bottom: 40px;
+    left: 10%;
+    z-index: 3;
+    display: flex;
+    gap: 20px;
+}
+
+.hero-social-links a {
+    color: #f8f6f0;
+    font-size: 1.5rem;
+    opacity: 0.6;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.hero-social-links a:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+/* Posizionamento Freccia animata */
+.scroll-arrow {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    color: #f8f6f0;
+    font-size: 1.8rem;
+    opacity: 0.7;
+    text-decoration: none;
+    animation: pulseArrow 2.5s infinite ease-in-out;
+}
+
+.scroll-arrow:hover {
+    color: #f8f6f0;
+}
+
+@keyframes pulseArrow {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateX(-50%) translateY(10px);
+        opacity: 1;
+    }
+}
+
 @media (max-width: 850px) {
     .hero-home {
         height: 60vh; 
@@ -471,6 +424,17 @@ html {
     .hero-home-testo p {
         font-size: 0.85rem;
         letter-spacing: 4px;
+    }
+    .hero-social-links {
+        left: 20px;
+        bottom: 25px;
+    }
+    .hero-social-links a {
+        font-size: 1.3rem;
+    }
+    .scroll-arrow {
+        bottom: 25px;
+        font-size: 1.5rem;
     }
 }
 
@@ -508,9 +472,13 @@ html {
 
 .hero-bio h1 { 
     position: relative; 
-    z-index: 1; color: #f8f6f0; 
-    font-weight: 300; font-size: 3.5rem; letter-spacing: 10px; 
-    text-transform: uppercase; text-align: center; 
+    z-index: 1;
+    color: #f8f6f0; 
+    font-weight: 300;
+    font-size: 3.5rem;
+    letter-spacing: 10px; 
+    text-transform: uppercase;
+    text-align: center; 
     text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); 
 }
 
@@ -707,7 +675,8 @@ html {
     box-shadow: 0 5px 15px rgba(29, 185, 84, 0.2);
 }
 
-.album-links .btn-extra-link:hover {
+.album-links .btn-extra-link:hover,
+.album-links .btn-works:hover {
     background: #1a1a1a;
     color: #f8f6f0;
     border-color: #1a1a1a;
@@ -777,7 +746,6 @@ html {
     padding-bottom: 20px;
 }
 
-/* Banner Raccolte: Aggiornato per rimuovere il tasto fisico e aggiungere i tag */
 .banner-raccolta {
     position: relative;
     display: block;
@@ -803,7 +771,6 @@ html {
 .banner-bg img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
 .banner-raccolta:hover .banner-bg img { transform: scale(1.05); }
 
-/* Nuovi elementi per i tag all'interno del banner */
 .banner-tags {
     position: absolute;
     top: 20px; left: 20px;
@@ -834,7 +801,7 @@ html {
     z-index: 3;
     display: flex;
     flex-direction: column;
-    align-items: flex-end; /* Testo allineato a destra */
+    align-items: flex-end;
     justify-content: center;
     height: 100%;
     text-align: right;
@@ -884,7 +851,7 @@ html {
 }
 
 .banner-raccolta.banner-chiaro h3 {
-    text-shadow: none; /* Rimuove l'ombra scura che sporcherebbe il testo nero */
+    text-shadow: none;
 }
 
 .banner-raccolta.banner-chiaro .banner-btn {
@@ -901,7 +868,7 @@ html {
 
 @media (max-width: 850px) {
     .banner-raccolta .banner-contenuto {
-        align-items: center; /* Su mobile torna al centro */
+        align-items: center;
         text-align: center;
         padding: 0 20px;
     }
@@ -914,14 +881,14 @@ html {
 /* Griglia Singoli */
 .griglia-spartiti {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); /* Ridotto da 350px per miniature più piccole */
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 40px;
 }
 
 .spartito-card {
     background: rgba(0, 0, 0, 0.015);
     border: 1px solid rgba(0, 0, 0, 0.04);
-    padding: 15px; /* Leggermente ridotto */
+    padding: 15px;
     border-radius: 4px;
     transition: all 0.5s ease;
     text-align: left;
@@ -981,7 +948,7 @@ html {
 
 .spartito-info h3 {
     font-weight: 400;
-    font-size: 1.1rem; /* Ridotto leggermente */
+    font-size: 1.1rem;
     margin-bottom: 10px;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -997,7 +964,7 @@ html {
 
 .spartito-azioni {
     display: flex;
-    width: 100%; /* Pulsante singolo a larghezza intera */
+    width: 100%;
 }
 
 .btn-compra {
@@ -1034,11 +1001,7 @@ html {
     max-width: 850px;
     margin: 0 auto 80px auto;
     padding: 0 40px;
-    text-align: left; /* Allineato a sinistra come richiesto */
-}
-
-.intro-progetto p {
-    margin-bottom: 20px; /* Spazio tra i vari paragrafi */
+    text-align: left;
 }
 
 .intro-progetto h1 {
@@ -1053,6 +1016,7 @@ html {
     font-size: 1.05rem;
     line-height: 1.9;
     opacity: 0.85;
+    margin-bottom: 20px;
 }
 
 .brano-container {
@@ -1066,7 +1030,6 @@ html {
     align-items: center;
 }
 
-/* Aggiunta della linea separatrice elegante tra i brani */
 .brano-container:not(:last-child)::after {
     content: '';
     position: absolute;
@@ -1132,13 +1095,91 @@ html {
 .btn-score:hover { background-color: #333; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 
 /* ==========================================
-   9. PAGINA CONTATTI & NEWSLETTER
+   8.1 EFFETTO SFUMATO INTRO (Pure CSS)
+   ========================================== */
+.contenitore-testo-sfumato {
+    position: relative;
+    max-height: 160px;
+    overflow: hidden;
+    transition: max-height 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.sfumatura {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background: linear-gradient(to bottom, rgba(244, 241, 235, 0), rgba(242, 239, 233, 1));
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.contenitore-btn-espandi {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.btn-espandi {
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    color: #1a1a1a;
+    padding: 12px 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.4s ease;
+}
+
+.btn-espandi:hover {
+    background: #1a1a1a;
+    color: #f8f6f0;
+}
+
+.btn-espandi i {
+    margin-left: 8px;
+    transition: transform 0.4s ease;
+}
+
+.espandi-checkbox {
+    display: none;
+}
+
+label.btn-espandi {
+    display: inline-block;
+}
+
+.btn-espandi .testo-chiudi {
+    display: none;
+}
+
+.espandi-checkbox:checked ~ .contenitore-testo-sfumato {
+    max-height: 3500px;
+}
+
+.espandi-checkbox:checked ~ .contenitore-testo-sfumato .sfumatura {
+    opacity: 0;
+}
+
+.espandi-checkbox:checked ~ .contenitore-btn-espandi .testo-apri {
+    display: none;
+}
+
+.espandi-checkbox:checked ~ .contenitore-btn-espandi .testo-chiudi {
+    display: inline;
+}
+
+/* ==========================================
+   9. PAGINA CONTATTI
    ========================================== */
 .layout-contatti {
-    max-width: 700px; /* Più stretto per evitare che il form diventi sproporzionatamente largo */
+    max-width: 700px;
     margin: 60px auto 100px auto;
     padding: 0 40px;
-    /* Rimosso il grid 1fr 1fr, ora è a singola colonna naturale */
 }
 
 @media (max-width: 850px) {
@@ -1147,7 +1188,7 @@ html {
     }
 }
 
-.info-dirette h2, .box-newsletter h3 {
+.info-dirette h2 {
     font-weight: 300;
     font-size: 1.8rem;
     letter-spacing: 4px;
@@ -1155,7 +1196,7 @@ html {
     text-transform: uppercase;
 }
 
-.Sottotitolo-contatti, .box-newsletter p {
+.Sottotitolo-contatti {
     font-size: 0.95rem;
     line-height: 1.8;
     opacity: 0.85;
@@ -1183,16 +1224,14 @@ html {
 .input-field:focus, .input-textarea:focus { outline: none; border-color: #1a1a1a; box-shadow: 0 0 0 1px #1a1a1a; }
 .input-textarea { resize: vertical; min-height: 120px; }
 
-.btn-invia, .btn-iscriviti {
+.btn-invia {
     display: inline-block; background: #1a1a1a; color: #f8f6f0; border: none;
     padding: 15px 30px; font-family: 'Montserrat', sans-serif; font-size: 0.9rem;
     letter-spacing: 2px; text-transform: uppercase; cursor: pointer; border-radius: 4px;
     transition: background 0.3s, transform 0.3s; width: 100%;
 }
 
-.btn-invia:hover, .btn-iscriviti:hover { background: #333; transform: translateY(-2px); }
-
-.box-newsletter { background: rgba(0, 0, 0, 0.03); padding: 40px; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.05); }
+.btn-invia:hover { background: #333; transform: translateY(-2px); }
 
 /* ==========================================
    10. PAGINA GRAZIE (CONFERMA INVIO)
@@ -1247,116 +1286,9 @@ html {
     background: #333;
     transform: translateY(-2px);
 }
-/* ==========================================
-   8.1 EFFETTO SFUMATO INTRO (Today's Office)
-   ========================================== */
-.contenitore-testo-sfumato {
-    position: relative;
-    max-height: 160px; /* Mostra all'incirca il primo paragrafo */
-    overflow: hidden;
-    transition: max-height 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.contenitore-testo-sfumato.aperto {
-    max-height: 3500px; /* Altezza sufficiente per contenere tutto */
-}
-
-.sfumatura {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 90px;
-    /* Colore basato sul background del sito */
-    background: linear-gradient(to bottom, rgba(244, 241, 235, 0), rgba(242, 239, 233, 1));
-    transition: opacity 0.5s ease;
-    pointer-events: none;
-}
-
-.contenitore-testo-sfumato.aperto .sfumatura {
-    opacity: 0;
-}
-
-.contenitore-btn-espandi {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 40px;
-}
-
-.btn-espandi {
-    background: transparent;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    color: #1a1a1a;
-    padding: 12px 25px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: all 0.4s ease;
-}
-
-.btn-espandi:hover {
-    background: #1a1a1a;
-    color: #f8f6f0;
-}
-
-.btn-espandi i {
-    margin-left: 8px;
-    transition: transform 0.4s ease;
-}
-
-/* Espansione testo in puro CSS (Shop) */
-.espandi-checkbox {
-    display: none;
-}
-
-label.btn-espandi {
-    display: inline-block;
-}
-
-.btn-espandi .testo-chiudi {
-    display: none;
-}
-
-.espandi-checkbox:checked ~ .contenitore-testo-sfumato {
-    max-height: 3500px;
-}
-
-.espandi-checkbox:checked ~ .contenitore-testo-sfumato .sfumatura {
-    opacity: 0;
-}
-
-.espandi-checkbox:checked ~ .contenitore-btn-espandi .testo-apri {
-    display: none;
-}
-
-.espandi-checkbox:checked ~ .contenitore-btn-espandi .testo-chiudi {
-    display: inline;
-}
-
-/* ==========================================
-   GIUSTIFICAZIONE GLOBALE TESTI (Sillabazione)
-   ========================================== */
-.novita-testo p,
-.album-desc,
-.intro-progetto p,
-.brano-testo p,
-.accordion-cv .details-content {
-    text-align: justify;
-    hyphens: auto;
-    -webkit-hyphens: auto;
-}
-
-/* Nasconde l'interruttore e l'icona del menu su PC */
-.menu-toggle-checkbox, 
-.menu-toggle-label {
-    display: none;
-}
 
 /* =========================================
-   REGOLE ESCLUSIVE PER MOBILE (Smartphone)
+   11. REGOLE ESCLUSIVE PER MOBILE (Smartphone)
    ========================================= */
 @media (max-width: 768px) {
     
@@ -1372,7 +1304,6 @@ label.btn-espandi {
         padding: 10px;
     }
 
-    /* Mostra l'icona dell'hamburger */
     .menu-toggle-label {
         display: block;
         font-size: 2rem;
@@ -1381,12 +1312,10 @@ label.btn-espandi {
         margin-top: 5px;
     }
 
-    /* Nasconde la casella di spunta */
     .menu-toggle-checkbox {
         display: none;
     }
 
-    /* Nasconde la lista dei link di default e la impagina in verticale */
     .menu-principale nav ul {
         display: none; 
         flex-direction: column;
@@ -1395,11 +1324,10 @@ label.btn-espandi {
         gap: 20px; 
         padding-top: 20px;
         padding-bottom: 10px;
-        padding-left: 0; /* Rimuove lo spazio vuoto a sinistra */
-        margin: 0; /* Azzera i margini predefiniti */
+        padding-left: 0;
+        margin: 0;
     }
 
-    /* Azzera i margini laterali ereditati dal computer fisso e forza il centro */
     .menu-principale nav ul li {
         margin: 0 !important;
         padding: 0 !important;
@@ -1407,22 +1335,25 @@ label.btn-espandi {
         text-align: center;
     }
 
-    /* LA MAGIA: Mostra la tendina quando l'icona viene toccata */
     .menu-toggle-checkbox:checked ~ ul {
         display: flex;
     }
 
-    /* Ingrandisce un po' le scritte del menu per facilitare il tocco */
     .menu-principale nav ul li a {
         font-size: 1.1rem;
     }
     
-    /* 3. RISOLUZIONE DEI TESTI (No giustificato) */
+    /* 3. RISOLUZIONE DEI TESTI (No giustificato su mobile) */
     .testo-interno p, 
     .brano-testo p,
-    .intro-progetto p {
+    .intro-progetto p,
+    .testo-bio p,
+    .album-desc,
+    .novita-testo p,
+    .accordion-cv .details-content {
         text-align: left !important;
         hyphens: none !important;
+        -webkit-hyphens: none !important;
     }
 
     /* 4. SCAMBIO VIDEO (Nasconde orizzontale, mostra verticale) */
