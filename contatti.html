@@ -56,13 +56,14 @@
 
                 <hr class="linea-separatrice">
 
-                <form action="https://formsubmit.co/maurospano95@gmail.com" method="POST" class="form-messaggio">
-                    <input type="text" name="_honey" style="display:none">
-                    <input type="hidden" name="_next" value="https://maurospano.com/grazie.html">
+                <form action="https://api.web3forms.com/submit" method="POST" class="form-messaggio">
+                    <input type="hidden" name="access_key" value="cc72b1cd-f796-4bd1-9ba2-bf6870878d75">
+                    <input type="checkbox" name="botcheck" style="display: none;">
+                    <input type="hidden" name="redirect" value="https://maurospano.com/grazie.html">
 
                     <input type="text" name="Nome" placeholder="Il tuo nome" required class="input-field">
                     <input type="email" name="Email" placeholder="La tua email" required class="input-field">
-                    <input type="text" name="_subject" placeholder="Oggetto del messaggio" class="input-field">
+                    <input type="text" name="subject" placeholder="Oggetto del messaggio" class="input-field">
                     <textarea name="Messaggio" placeholder="Scrivi qui il tuo messaggio..." required class="input-textarea"></textarea>
                     
                     <button type="submit" class="btn-invia">Invia Messaggio</button>
