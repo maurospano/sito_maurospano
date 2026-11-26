@@ -244,6 +244,41 @@ body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
+.novita-azioni {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+    .novita-azioni {
+        justify-content: center;
+    }
+}
+
+.btn-scopri-spotify {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #1DB954;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 1px solid #1DB954;
+    padding: 12px 30px;
+    transition: all 0.4s ease;
+}
+
+.btn-scopri-spotify:hover {
+    background: #18a349;
+    border-color: #18a349;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(29, 185, 84, 0.25);
+}
+
 .sezione-video-home {
     margin-top: 60px;
     text-align: center;
